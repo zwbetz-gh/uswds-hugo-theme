@@ -1,0 +1,41 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  
+  <div class="post-info">
+    <strong>Publish date: </strong>{{ .PublishDate.Format "2006-01-02" }}
+  </div>
+  
+  {{ $tags := slice }}
+  {{ with .Params.tags }}
+    <div class="">
+      <strong>Tags: </strong>
+      {{ range . }}
+        {{ $href := print ("tags/" | absLangURL) (. | urlize) "/" }}
+        {{ $element := printf "<a href=\"%s\">%s</a>" $href . }}
+        {{ $tags = $tags | append $element }}
+      {{ end }}
+      {{ delimit $tags ", " }}
+    </div>
+  {{ end }}
+  
+  {{ if ne .Params.toc false }}
+    {{ partial "toc.html" . }}
+  {{ end }}
+  
+  {{ partial "header-link.html" .Content }}
+
+  <p>
+    {{ with .PrevInSection }}
+    <a href="{{ .Permalink }}" class="float-left">
+      {{ printf "%s %s" (partial "icon/arrow-left-circle.html") .Title | safeHTML }}
+    </a>
+    {{ end }}
+    
+    {{ with .NextInSection }}
+    <a href="{{ .Permalink }}" class="float-right">
+      {{ printf "%s %s" .Title (partial "icon/arrow-right-circle.html") | safeHTML }}
+    </a>
+    {{ end }}
+  </p>
+  
+{{ end }}

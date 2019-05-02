@@ -1,0 +1,27 @@
+{{ $command := .Get "command" }}
+{{ $options := .Get "options" }}
+
+{{ with .Page.Resources.ByType "image" }}
+  {{ range . }}
+
+    {{ $original := . }}
+    {{ $new := "" }}
+
+    {{ if eq $command "Fit" }}
+      {{ $new = $original.Fit $options }}
+    {{ else if eq $command "Fill" }}
+      {{ $new = $original.Fill $options }}
+    {{ else if eq $command "Resize" }}
+      {{ $new = $original.Resize $options }}
+    {{ else if eq $command "Original" }}
+      {{ $new = $original }}
+    {{ else }}
+      {{ errorf "Invalid image processing command: Must be one of Fit, Fill, Resize, Original." }}
+    {{ end }}
+
+    <a href="{{ $original.Permalink }}">
+      <img src="{{ $new.Permalink }}" class="img-fluid rounded mb-3">
+    </a>
+
+  {{ end }}
+{{ end }}

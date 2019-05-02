@@ -1,0 +1,4 @@
+{{ $icon := partial "icon/link.html" }}
+{{ $content := . | replaceRE "(<h[2-6] id=\"([^\"]+)\">)(.+)(</h[2-6]+>)" `${1}${3} <a class="header-icon-link" href="#${2}"><i data-feather="link"></i></a>${4}` }}
+{{ $content := replaceRE "<i data-feather=\"link\"></i>" $icon $content }}
+{{ $content | safeHTML }}

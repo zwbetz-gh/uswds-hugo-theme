@@ -1,0 +1,12 @@
+name = "USWDS Hugo Theme"
+license = "MIT"
+licenselink = "TODO"
+description = "TODO"
+homepage = "https://github.com/zwbetz-gh/uswds-hugo-theme"
+tags = ["todo"]
+features = ["todo"]
+min_version = "0.55.4"
+
+[author]
+  name = "Zachary Betz"
+  homepage = "https://zwbetz.com/"
