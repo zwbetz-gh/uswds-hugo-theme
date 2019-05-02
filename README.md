@@ -6,11 +6,11 @@ TODO description
 
 ## Demo
 
-https://uswds-hugo-theme.netlify.com/
+TODO https://uswds-hugo-theme.netlify.com/
 
 ## Minimum Hugo version
 
-Hugo extended version `0.54.0` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
+Hugo extended version `0.55.4` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
 
 ## Installation
 
