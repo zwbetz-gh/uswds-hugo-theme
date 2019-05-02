@@ -1,5 +1,5 @@
 ---
-title: "Lil Boot Typography"
+title: "Theme Typography"
 date: 2019-03-29
 tags: [markdown, typography]
 ---
@@ -7,10 +7,10 @@ tags: [markdown, typography]
 ## Text
 
 ```
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+Text can be **bold**, _italic_, or ~~strikethrough~~. A [Link](https://github.com). 
 ```
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+Text can be **bold**, _italic_, or ~~strikethrough~~. A [Link](https://github.com). 
 
 ## Paragraph 
 
@@ -283,8 +283,6 @@ Tables should have bold headings and alternating shaded rows.
 ````
 Code snippets like `var foo = "bar";` can be shown inline.
 
-Also, `this should vertically align` ~~`with this`~~.
-
 Code can also be shown in a block element.
 
 ```
@@ -295,14 +293,6 @@ Code can also use syntax highlighting.
 
 ```js
 var foo = "bar";
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```js
-var foo = "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
 ```
 
 Inline code inside table cells should still be distinguishable.
@@ -315,8 +305,6 @@ Inline code inside table cells should still be distinguishable.
 
 Code snippets like `var foo = "bar";` can be shown inline.
 
-Also, `this should vertically align` ~~`with this`~~.
-
 Code can also be shown in a block element.
 
 ```
@@ -327,14 +315,6 @@ Code can also use syntax highlighting.
 
 ```js
 var foo = "bar";
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```js
-var foo = "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
 ```
 
 Inline code inside table cells should still be distinguishable.
