@@ -1,16 +1,16 @@
-# USWDS Hugo Theme
+# USWDS Hugo theme
 
-TODO netlify status 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/675e8c1c-bba0-4a89-8cb6-4e4706bae488/deploy-status)](https://app.netlify.com/sites/uswds-hugo-theme/deploys)
 
-TODO description
+A Hugo theme made with [United States Web Design System](https://v2.designsystem.digital.gov/). 
 
 ## Demo
 
-TODO https://uswds-hugo-theme.netlify.com/
+https://uswds-hugo-theme.netlify.com/
 
 ## Minimum Hugo version
 
-Hugo extended version `0.55.4` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
+Hugo extended version `0.55.5` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
 
 ## Installation
 
@@ -39,4 +39,3 @@ hugo server --themesDir ../..
 ## Configuration
 
 Copy the `config.yaml` from the [`exampleSite`](https://github.com/zwbetz-gh/uswds-hugo-theme/tree/master/exampleSite), then edit as desired. 
-
