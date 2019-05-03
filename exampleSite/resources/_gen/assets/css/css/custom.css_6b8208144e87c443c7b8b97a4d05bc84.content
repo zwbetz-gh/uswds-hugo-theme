@@ -1,1 +1,1 @@
-code,pre{font-size:.77401rem;background-color:rgba(0,0,0,.05);font-weight:400}pre{padding:1rem}pre code{padding:0;background-color:transparent}code{padding:2px .25rem;border-radius:2px}
+code,pre{font-size:.85rem;background-color:rgba(0,0,0,.05);font-weight:400}pre{padding:1rem}pre code{padding:0;background-color:transparent}code{padding:2px .25rem;border-radius:2px}.toc{font-size:.85rem;border:1px solid #dcdee0;padding:1rem;margin-top:1rem}

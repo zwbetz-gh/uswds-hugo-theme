@@ -1,7 +1,7 @@
 /* Code */
 code, 
 pre {
-  font-size: .77401rem;
+  font-size: .85rem;
   background-color: rgba(0,0,0,.05);
   font-weight: 400;
 }
@@ -18,4 +18,12 @@ pre code {
 code {
   padding: 2px 0.25rem;
   border-radius: 2px;
+}
+
+/* Table of contents */
+.toc {
+  font-size: .85rem;
+  border: 1px solid rgb(220, 222, 224); 
+  padding: 1rem; 
+  margin-top: 1rem;
 }

@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+    
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ hugo.Generator }}
     <title>{{ .Title }} | {{ site.Title }}</title>
 
     {{ $themeCss := resources.Get "css/uswds.min.css" | fingerprint }}
@@ -78,5 +80,7 @@
     
     {{ $themeJs := resources.Get "js/uswds.min.js" | fingerprint }}
     <script src="{{ $themeJs.Permalink }}"></script>
+
+    {{ partial "google-analytics-async.html" . }}
   </body>
 </html>
