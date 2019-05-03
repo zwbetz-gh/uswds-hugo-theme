@@ -4,8 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>TODO</title>
-    <link rel="stylesheet" href="/css/uswds.min.css" />
+    <title>{{ .Title }} | {{ site.Title }}</title>
+    {{ $themeCss := resources.Get "css/uswds.min.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ $themeCss.Permalink }}">
+    {{ $customCss := resources.Get "css/custom.css" | fingerprint | minify }}
+    <link rel="stylesheet" href="{{ $customCss.Permalink }}">
   </head>
   <body>
     <a class="usa-skipnav" href="#main-content">Skip to main content</a>
@@ -18,7 +21,7 @@
         <div class="usa-navbar">
           <div class="usa-logo" id="basic-mega-logo">
             <em class="usa-logo__text"
-              ><a href="/" title="Home" aria-label="Home">uswds</a></em>
+              ><a href="/" title="Home" aria-label="Home">{{ site.Title }}</a></em>
           </div>
           <button class="usa-menu-btn">Menu</button>
         </div>
@@ -29,7 +32,7 @@
           <ul class="usa-nav__primary usa-accordion">
             
             <li class="usa-nav__primary-item">
-              <a class="usa-nav__link" href="javascript:void(0)">
+              <a class="usa-nav__link usa-current" href="javascript:void(0)">
                 <span>Home</span>
               </a>
             </li>
@@ -51,133 +54,30 @@
     <main class="usa-layout-docs usa-section" id="main-content">
       <div class="grid-container">
         <div class="grid-row grid-gap">
-          
-
-          <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
-            
-
+          <div class="usa-layout-docs__main desktop:grid-col-12 usa-prose">
             {{ block "main" . }}{{ end }}
-
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="usa-footer" role="contentinfo">
+    <footer class="usa-footer usa-footer--slim" role="contentinfo">
       <div class="grid-container usa-footer__return-to-top">
         <a href="#">Return to top</a>
       </div>
-      <div class="usa-footer__primary-section">
-        <nav class="usa-footer__nav">
-          <ul class="add-list-reset grid-row grid-gap">
-            <li
-              class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content"
-            >
-              <a class="usa-footer__primary-link" href="javascript:void(0);"
-                >Primary link</a
-              >
-            </li>
-            <li
-              class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content"
-            >
-              <a class="usa-footer__primary-link" href="javascript:void(0);"
-                >Primary link</a
-              >
-            </li>
-            <li
-              class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content"
-            >
-              <a class="usa-footer__primary-link" href="javascript:void(0);"
-                >Primary link</a
-              >
-            </li>
-            <li
-              class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content"
-            >
-              <a class="usa-footer__primary-link" href="javascript:void(0);"
-                >Primary link</a
-              >
-            </li>
-            <li
-              class="mobile-lg:grid-col-4 desktop:grid-col-2 usa-footer__primary-content"
-            >
-              <a class="usa-footer__primary-link" href="javascript:void(0);"
-                >Primary link</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-
       <div class="usa-footer__secondary-section">
         <div class="grid-container">
-          <div class="grid-row grid-gap">
-            <div
-              class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2"
-            >
-              <div class="mobile-lg:grid-col-auto">
-                <img
-                  class="usa-footer__logo-img"
-                  src="/img/logo-img.png"
-                  alt=""
-                />
-              </div>
-              <div class="mobile-lg:grid-col-auto">
-                <h3 class="usa-footer__logo-heading">Name of Agency</h3>
-              </div>
-            </div>
-            <div class="usa-footer__contact-links mobile-lg:grid-col-6">
-              <div class="usa-footer__social-links grid-row grid-gap-1">
-                <div class="grid-col-auto">
-                  <a
-                    class="usa-social-link usa-social-link--facebook"
-                    href="javascript:void(0);"
-                  >
-                    <span>Facebook</span>
-                  </a>
-                </div>
-                <div class="grid-col-auto">
-                  <a
-                    class="usa-social-link usa-social-link--twitter"
-                    href="javascript:void(0);"
-                  >
-                    <span>Twitter</span>
-                  </a>
-                </div>
-                <div class="grid-col-auto">
-                  <a
-                    class="usa-social-link usa-social-link--youtube"
-                    href="javascript:void(0);"
-                  >
-                    <span>YouTube</span>
-                  </a>
-                </div>
-                <div class="grid-col-auto">
-                  <a
-                    class="usa-social-link usa-social-link--rss"
-                    href="javascript:void(0);"
-                  >
-                    <span>RSS</span>
-                  </a>
-                </div>
-              </div>
-              <h3 class="usa-footer__contact-heading">Agency Contact Center</h3>
-              <address class="usa-footer__address">
-                <div class="usa-footer__contact-info grid-row grid-gap">
-                  <div class="grid-col-auto">
-                    <a href="tel:1-800-555-5555">(800) CALL-GOVT</a>
-                  </div>
-                  <div class="grid-col-auto">
-                    <a href="mailto:info@agency.gov">info@agency.gov</a>
-                  </div>
-                </div>
-              </address>
+          <div class="usa-footer__logo grid-row grid-gap-2">
+            <div class="grid-col-auto">
+              <span>Powered by <a href="https://gohugo.io/">Hugo</a> v{{ hugo.Version }}</span>
             </div>
           </div>
         </div>
       </div>
     </footer>
 
-    <script src="/js/uswds.min.js"></script>
+    
+    {{ $themeJs := resources.Get "js/uswds.min.js" | fingerprint }}
+    <script src="{{ $themeJs.Permalink }}"></script>
   </body>
 </html>
