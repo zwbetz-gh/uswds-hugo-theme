@@ -4,48 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <title>{{ .Title }} | {{ site.Title }}</title>
+
     {{ $themeCss := resources.Get "css/uswds.min.css" | fingerprint }}
     <link rel="stylesheet" href="{{ $themeCss.Permalink }}">
+    
     {{ $customCss := resources.Get "css/custom.css" | fingerprint | minify }}
     <link rel="stylesheet" href="{{ $customCss.Permalink }}">
   </head>
   <body>
     <a class="usa-skipnav" href="#main-content">Skip to main content</a>
 
-    <header
-      class="usa-header usa-header--basic usa-header--megamenu"
-      role="banner"
-    >
+    <header class="usa-header usa-header--basic" role="banner">
       <div class="usa-nav-container">
         <div class="usa-navbar">
           <div class="usa-logo" id="basic-mega-logo">
-            <em class="usa-logo__text"
-              ><a href="/" title="Home" aria-label="Home">{{ site.Title }}</a></em>
+            <em class="usa-logo__text">
+              <a href="/" title="Home" aria-label="Home">{{ site.Title }}</a>
+            </em>
           </div>
           <button class="usa-menu-btn">Menu</button>
         </div>
+
         <nav role="navigation" class="usa-nav">
           <button class="usa-nav__close">
             <img src="/img/close.svg" alt="close" />
           </button>
           <ul class="usa-nav__primary usa-accordion">
-            
-            <li class="usa-nav__primary-item">
-              <a class="usa-nav__link usa-current" href="javascript:void(0)">
-                <span>Home</span>
-              </a>
-            </li>
-            <li class="usa-nav__primary-item">
-                <a class="usa-nav__link" href="javascript:void(0)">
-                  <span>Blog</span>
+            {{ $current := . }}
+            {{ range site.Menus.nav }}
+              {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+              {{ $active = or $active (eq .Name $current.Title) }}
+              {{ $active = or $active (and (eq .Name "Blog") (eq $current.Section "post")) }}
+              {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
+              <li class="usa-nav__primary-item">
+                <a class="usa-nav__link {{ if $active }}usa-current{{ end }}" href="{{ .URL }}">
+                  <span>{{ .Name }}</span>
                 </a>
               </li>
-              <li class="usa-nav__primary-item">
-                  <a class="usa-nav__link" href="javascript:void(0)">
-                    <span>Tags</span>
-                  </a>
-                </li>
+            {{ end }}
           </ul>
         </nav>
       </div>
@@ -65,9 +63,10 @@
       <div class="grid-container usa-footer__return-to-top">
         <a href="#">Return to top</a>
       </div>
+
       <div class="usa-footer__secondary-section">
         <div class="grid-container">
-          <div class="usa-footer__logo grid-row grid-gap-2">
+          <div class="usa-footer__logo grid-row">
             <div class="grid-col-auto">
               <span>Powered by <a href="https://gohugo.io/">Hugo</a> v{{ hugo.Version }}</span>
             </div>

@@ -1,14 +1,13 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ $type := .Type }}
-  <ul class="">
+  <ul>
     {{ range $key, $value := .Data.Terms.ByCount }}
       {{ $name := .Name }}
       {{ $count := .Count }}
       {{ with site.GetPage (printf "/%s/%s" $type $name) }}
         <li>
-          <span class="sr-only">Tag count</span>
-          <span class="">{{ $count }}</span>
+          <span>({{ $count }})</span>
           <a href="{{ .Permalink }}">{{ $name }}</a>
         </li>
       {{ end }}
