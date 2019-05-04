@@ -1,13 +1,11 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   
-  <div class="post-info">
+  <p>
     <strong>Publish date: </strong>{{ .PublishDate.Format "2006-01-02" }}
-  </div>
-  
-  {{ $tags := slice }}
-  {{ with .Params.tags }}
-    <div class="">
+    {{ $tags := slice }}
+    {{ with .Params.tags }}
+      <br>
       <strong>Tags: </strong>
       {{ range . }}
         {{ $href := print ("tags/" | absLangURL) (. | urlize) "/" }}
@@ -15,8 +13,8 @@
         {{ $tags = $tags | append $element }}
       {{ end }}
       {{ delimit $tags ", " }}
-    </div>
-  {{ end }}
+    {{ end }}
+  </p>
   
   {{ if ne .Params.toc false }}
     {{ partial "toc.html" . }}
@@ -24,18 +22,21 @@
   
   {{ partial "header-link.html" .Content }}
 
-  <p>
+  <div class="prev-and-next-post">
     {{ with .PrevInSection }}
-    <a href="{{ .Permalink }}" class="float-left">
-      {{ printf "%s %s" (partial "icon/arrow-left-circle.html") .Title | safeHTML }}
-    </a>
+    <div class="float-left">
+      <a href="{{ .Permalink }}">
+        {{ printf "<< %s" .Title }}
+      </a>
+    </div>
     {{ end }}
     
     {{ with .NextInSection }}
-    <a href="{{ .Permalink }}" class="float-right">
-      {{ printf "%s %s" .Title (partial "icon/arrow-right-circle.html") | safeHTML }}
-    </a>
+    <div class="float-right">
+      <a href="{{ .Permalink }}">
+        {{ printf "%s >>" .Title }}
+      </a>
+    </div>
     {{ end }}
-  </p>
-  
+  </div>
 {{ end }}

@@ -22,8 +22,12 @@ code {
 
 /* Table of contents */
 .toc {
-  font-size: .85rem;
   border: 1px solid rgb(220, 222, 224); 
   padding: 1rem; 
   margin-top: 1rem;
+}
+
+/* Post layout */
+.prev-and-next-post {
+  margin-top: 2rem;
 }

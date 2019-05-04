@@ -1,7 +1,7 @@
 {{ $headings := findRE "<h2.*?>(.|\n])+?</h2>" .Content }}
 {{ if ge (len $headings) 2 }}
 <div class="toc">
-  <strong>Table of Contents</strong>
+  <strong>Table of contents</strong>
   <ol>
     {{ range $headings }}
     <li>
