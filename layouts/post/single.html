@@ -22,21 +22,4 @@
   
   {{ partial "header-link.html" .Content }}
 
-  <div class="prev-and-next-post">
-    {{ with .PrevInSection }}
-    <div class="float-left">
-      <a href="{{ .Permalink }}">
-        {{ printf "<< %s" .Title }}
-      </a>
-    </div>
-    {{ end }}
-    
-    {{ with .NextInSection }}
-    <div class="float-right">
-      <a href="{{ .Permalink }}">
-        {{ printf "%s >>" .Title }}
-      </a>
-    </div>
-    {{ end }}
-  </div>
 {{ end }}

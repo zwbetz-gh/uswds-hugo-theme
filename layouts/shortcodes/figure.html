@@ -19,9 +19,9 @@
   {{ errorf "Invalid image processing command: Must be one of Fit, Fill, Resize, Original." }}
 {{ end }}
 
-<figure class="figure">
+<figure>
   <a href="{{ $original.Permalink }}">
-    <img src="{{ $new.Permalink }}" class="figure-img img-fluid rounded" alt="{{ $alt }}">
+    <img src="{{ $new.Permalink }}" alt="{{ $alt }}">
   </a>
-  <figcaption class="figure-caption">{{ $caption | markdownify }}</figcaption>
+  <figcaption>{{ $caption | markdownify }}</figcaption>
 </figure>

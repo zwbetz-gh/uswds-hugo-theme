@@ -20,14 +20,17 @@ code {
   border-radius: 2px;
 }
 
+/* Blockquote */
+blockquote {
+  border-left: .25rem solid #f0f0f0;
+  padding-left: 1rem;
+  margin-left: 0;
+  max-width: 68ex;
+}
+
 /* Table of contents */
 .toc {
   border: 1px solid rgb(220, 222, 224); 
   padding: 1rem; 
   margin-top: 1rem;
-}
-
-/* Post layout */
-.prev-and-next-post {
-  margin-top: 2rem;
 }
