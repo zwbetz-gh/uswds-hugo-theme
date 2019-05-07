@@ -22,7 +22,7 @@ code {
 
 /* Blockquote */
 blockquote {
-  border-left: .25rem solid #f0f0f0;
+  border-left: .25rem solid #dcdee0;
   padding-left: 1rem;
   margin-left: 0;
   max-width: 68ex;
@@ -30,7 +30,21 @@ blockquote {
 
 /* Table of contents */
 .toc {
-  border: 1px solid rgb(220, 222, 224); 
+  border: 1px solid #dcdee0;
   padding: 1rem; 
   margin-top: 1rem;
+}
+
+/* Navbar */
+header {
+  background-color: #f0f0f0;
+}
+.usa-nav {
+  border-left: 1px solid #dcdee0;
+}
+
+/* Footer */
+.usa-footer__secondary-section {
+  background-color: #f0f0f0;
+  border-top: 1px solid #dcdee0;
 }
