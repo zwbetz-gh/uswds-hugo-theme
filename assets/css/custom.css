@@ -39,7 +39,7 @@ blockquote {
 header {
   background-color: #f0f0f0;
 }
-.usa-nav {
+.usa-nav.is-visible {
   border-left: 1px solid #dcdee0;
 }
 
