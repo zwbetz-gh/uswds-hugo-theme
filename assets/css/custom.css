@@ -36,15 +36,12 @@ blockquote {
 }
 
 /* Navbar */
-header {
-  background-color: #f0f0f0;
-}
 .usa-nav.is-visible {
   border-left: 1px solid #dcdee0;
 }
 
 /* Footer */
 .usa-footer__secondary-section {
-  background-color: #f0f0f0;
+  background-color: #fff;
   border-top: 1px solid #dcdee0;
 }
