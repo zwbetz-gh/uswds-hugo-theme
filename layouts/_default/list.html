@@ -3,6 +3,7 @@
   <ul>
     {{ range where .Pages.ByPublishDate.Reverse "Section" "post" }}
       <li>
+        <span class="usa-sr-only">Publish date</span>
         <span class="usa-tag">{{ .PublishDate.Format "2006-01-02" }}</span>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
