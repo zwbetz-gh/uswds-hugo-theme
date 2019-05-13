@@ -3,15 +3,13 @@ languageCode: en-us
 defaultContentLanguage: en
 title: USWDS
 theme: uswds-hugo-theme
-
 enableRobotsTXT: true
 timeout: 45000
+googleAnalytics: UA-123456789-1
+enableGitInfo: true
 
 pygmentsCodefences: true
 pygmentsStyle: pygments
-
-googleAnalytics: UA-123456789-1
-# disqusShortname: yourdiscussshortname
 
 taxonomies:
   tag: tags
@@ -22,9 +20,6 @@ permalinks:
 imaging:
   quality: 90
 
-params:
-  # footer: Made with [Hugo](https://gohugo.io/). Themed by [Lil Boot](https://github.com/zwbetz-gh/lil-boot-hugo-theme). Hosted on [Netlify](https://www.netlify.com/).
-  
 menu:
   nav:
     - name: Home
