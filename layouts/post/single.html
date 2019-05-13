@@ -8,7 +8,7 @@
     
     {{ with .Lastmod }}
       {{ if gt . $publishDate }}
-        <span class="margin-left-1 margin-right-1">|</span>
+        <br>
         <strong>Last modified: </strong>{{ .Format $dateFormat }}
       {{ end }}
     {{ end }}
