@@ -1,3 +1,9 @@
+/* Focus */
+details summary:focus {
+  outline-offset: 0px;
+  outline: rgb(36, 145, 255) solid 0.25rem;
+}
+
 /* Code */
 code, 
 pre {
