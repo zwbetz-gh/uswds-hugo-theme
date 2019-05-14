@@ -1,45 +1,5 @@
 {{ $class := "usa-table" }}
 
-<h2>Hugo</h2>
-<table class="{{ $class }}">
-  <tr>
-    <td>hugo.Version</td>
-    <td>{{ hugo.Version }}</td>
-  </tr>
-  <tr>
-    <td>hugo.BuildDate</td>
-    <td>{{ hugo.BuildDate }}</td>
-  </tr>
-  <tr>
-    <td>hugo.Environment</td>
-    <td>{{ hugo.Environment }}</td>
-  </tr>
-</table>
-
-<h2>Site</h2>
-<table class="{{ $class }}">
-  <tr>
-    <td>site.Home</td>
-    <td>{{ site.Home }}</td>
-  </tr>
-  <tr>
-    <td>site.IsServer</td>
-    <td>{{ site.IsServer }}</td>
-  </tr>
-  <tr>
-    <td>site.Language.Lang</td>
-    <td>{{ site.Language.Lang }}</td>
-  </tr>
-  <tr>
-    <td>site.LastChange</td>
-    <td>{{ site.LastChange }}</td>
-  </tr>
-  <tr>
-    <td>site.Pages</td>
-    <td>{{ site.Pages }}</td>
-  </tr>
-</table>
-
 <h2>Page</h2>
 <table class="{{ $class }}">
   <tr>
@@ -177,5 +137,45 @@
   <tr>
     <td>.Sections</td>
     <td>{{ .Sections }}</td>
+  </tr>
+</table>
+
+<h2>Site</h2>
+<table class="{{ $class }}">
+  <tr>
+    <td>site.Home</td>
+    <td>{{ site.Home }}</td>
+  </tr>
+  <tr>
+    <td>site.IsServer</td>
+    <td>{{ site.IsServer }}</td>
+  </tr>
+  <tr>
+    <td>site.Language.Lang</td>
+    <td>{{ site.Language.Lang }}</td>
+  </tr>
+  <tr>
+    <td>site.LastChange</td>
+    <td>{{ site.LastChange }}</td>
+  </tr>
+  <tr>
+    <td>site.Pages</td>
+    <td>{{ site.Pages }}</td>
+  </tr>
+</table>
+
+<h2>Hugo</h2>
+<table class="{{ $class }}">
+  <tr>
+    <td>hugo.Version</td>
+    <td>{{ hugo.Version }}</td>
+  </tr>
+  <tr>
+    <td>hugo.BuildDate</td>
+    <td>{{ hugo.BuildDate }}</td>
+  </tr>
+  <tr>
+    <td>hugo.Environment</td>
+    <td>{{ hugo.Environment }}</td>
   </tr>
 </table>
