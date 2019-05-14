@@ -41,14 +41,24 @@
   <tr>
     <td>.OutputFormats</td>
     <td>
-      {{ range .OutputFormats }}
-        {{ .Name }} 
-      {{ end }}
+      <details>
+        <summary>{{ len .OutputFormats }}</summary>
+        {{ range .OutputFormats }}
+          {{ .Name }}<br>
+        {{ end }}
+      </details>
     </td>
   </tr>
   <tr>
     <td>.Pages</td>
-    <td>{{ .Pages }}</td>
+    <td>
+      <details>
+        <summary>{{ .Pages }}</summary>
+        {{ range .Pages }}
+          {{ . }}<br>
+        {{ end }}
+      </details>
+    </td>
   </tr>
   <tr>
     <td>.Permalink</td>
@@ -148,46 +158,13 @@
   </tr>
   <tr>
     <td>.Sections</td>
-    <td>{{ .Sections }}</td>
-  </tr>
-</table>
-
-<h2>Site</h2>
-<table class="{{ $class }}">
-  <tr>
-    <td>site.BuildDrafts</td>
-    <td>{{ site.BuildDrafts }}</td>
-  </tr>
-  <tr>
-    <td>site.Home</td>
-    <td>{{ site.Home }}</td>
-  </tr>
-  <tr>
-    <td>site.IsServer</td>
-    <td>{{ site.IsServer }}</td>
-  </tr>
-  <tr>
-    <td>site.Language.Lang</td>
-    <td>{{ site.Language.Lang }}</td>
-  </tr>
-  <tr>
-    <td>site.LastChange</td>
-    <td>{{ site.LastChange }}</td>
-  </tr>
-  <tr>
-    <td>site.Pages</td>
-    <td>{{ site.Pages }}</td>
-  </tr>
-  <tr>
-    <td>site.RegularPages</td>
-    <td>{{ site.RegularPages }}</td>
-  </tr>
-  <tr>
-    <td>site.Sections</td>
     <td>
-      {{ range site.Sections }}
-        {{ . }}
-      {{ end }}
+      <details>
+        <summary>{{ .Sections }}</summary>
+        {{ range .Sections }}
+          {{ . }}<br>
+        {{ end }}
+      </details>
     </td>
   </tr>
 </table>
@@ -209,5 +186,90 @@
   <tr>
     <td>hugo.Environment</td>
     <td>{{ hugo.Environment }}</td>
+  </tr>
+</table>
+
+<h2>Site</h2>
+<table class="{{ $class }}">
+  <tr>
+    <td>site.BaseURL</td>
+    <td>{{ site.BaseURL }}</td>
+  </tr>
+  <tr>
+    <td>site.BuildDrafts</td>
+    <td>{{ site.BuildDrafts }}</td>
+  </tr>
+  <tr>
+    <td>site.Home</td>
+    <td>{{ site.Home }}</td>
+  </tr>
+  <tr>
+    <td>site.IsMultiLingual</td>
+    <td>{{ site.IsMultiLingual }}</td>
+  </tr>
+  <tr>
+    <td>site.IsServer</td>
+    <td>{{ site.IsServer }}</td>
+  </tr>
+  <tr>
+    <td>site.Language.Lang</td>
+    <td>{{ site.Language.Lang }}</td>
+  </tr>
+  <tr>
+    <td>site.LastChange</td>
+    <td>{{ site.LastChange }}</td>
+  </tr>
+  <tr>
+    <td>site.Pages</td>
+    <td>
+      <details>
+        <summary>{{ site.Pages }}</summary>
+        {{ range site.Pages }}
+          {{ . }}<br>
+        {{ end }}
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>site.RegularPages</td>
+    <td>
+      <details>
+        <summary>{{ site.RegularPages }}</summary>
+        {{ range site.RegularPages }}
+          {{ . }}<br>
+        {{ end }}
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>site.Sections</td>
+    <td>
+      <details>
+        <summary>{{ site.Sections }}</summary>
+        {{ range site.Sections }}
+          {{ . }}<br>
+        {{ end }}
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>site.Taxonomies</td>
+    <td>
+      <details>
+        <summary>{{ site.Taxonomies }}</summary>
+        {{ range site.Taxonomies }}
+          <details>
+            <summary>{{ len . }}</summary>
+            {{ range . }}
+              {{ . }}<br>
+            {{ end }}
+          </details>
+        {{ end }}
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>site.Title</td>
+    <td>{{ site.Title }}</td>
   </tr>
 </table>
