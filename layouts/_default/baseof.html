@@ -64,11 +64,27 @@
     <footer class="usa-footer usa-footer--slim" role="contentinfo">
       <div class="usa-footer__secondary-section">
         <div class="grid-container">
-          <div class="grid-row">
-            <div class="grid-col-auto">
-              <span class="display-inline-block margin-bottom-1">Made with <a href="https://gohugo.io/">Hugo</a> and <a href="https://v2.designsystem.digital.gov/">USWDS</a></span>
-              <br>
-              <span class="display-inline-block margin-bottom-1"><a href="/index.xml">RSS feed</a></span>
+          <div class="grid-row grid-gap">
+            <div class="desktop:grid-col-12">
+              <span class="display-block margin-bottom-3">
+                Made with <a href="https://gohugo.io/">Hugo</a> and <a href="https://v2.designsystem.digital.gov/">USWDS</a> | 
+                Deployed to <a href="https://www.netlify.com/">Netlify</a> | 
+                <a href="/index.xml">RSS feed</a>
+              </span>
+
+              {{ $heading := "Debug info" }}
+              {{ $id := $heading | md5 }}
+              <div class="usa-accordion usa-accordion--bordered">
+                <h2 class="usa-accordion__heading">
+                  <button class="usa-accordion__button" aria-expanded="false" aria-controls="{{ $id }}">
+                    {{ $heading }}
+                  </button>
+                </h2>
+                <div id="{{ $id }}" class="usa-accordion__content usa-prose">
+                  {{ partial "debug-table.html" . }}
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
