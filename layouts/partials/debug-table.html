@@ -102,39 +102,39 @@
 <table class="{{ $class }}">
   <tr>
     <td>.File.Path</td>
-    <td>{{ .File.Path }}</td>
+    <td>{{ with .File }}{{ .Path }}{{ end }}</td>
   </tr>
   <tr>
     <td>.File.LogicalName</td>
-    <td>{{ .File.LogicalName }}</td>
+    <td>{{ with .File }}{{ .LogicalName }}{{ end }}</td>
   </tr>
   <tr>
     <td>.File.TranslationBaseName</td>
-    <td>{{ .File.TranslationBaseName }}</td>
+    <td>{{ with .File }}{{ .TranslationBaseName }}{{ end }}</td>
   </tr>
   <tr>
     <td>.File.ContentBaseName</td>
-    <td>{{ .File.ContentBaseName }}</td>
+    <td>{{ with .File }}{{ .ContentBaseName }}{{ end }}</td>
   </tr>
   <tr>
     <td>.File.BaseFileName</td>
-    <td>{{ .File.BaseFileName }}</td>
+    <td>{{ with .File }}{{ .BaseFileName }}{{ end }}</td>
   </tr>
   <tr>
     <td>.File.Ext</td>
-    <td>{{ .File.Ext }}</td>
+    <td>{{ with .File }}{{ .Ext }}{{ end }}</td>
   </tr>
   <tr>
     <td>.File.Lang</td>
-    <td>{{ .File.Lang }}</td>
+    <td>{{ with .File }}{{ .Lang }}{{ end }}</td>
   </tr>
   <tr>
     <td>.File.Dir</td>
-    <td>{{ .File.Dir }}</td>
+    <td>{{ with .File }}{{ .Dir }}{{ end }}</td>
   </tr>
   <tr>
     <td>.File.UniqueID</td>
-    <td>{{ .File.UniqueID }}</td>
+    <td>{{ with .File }}{{ .UniqueID }}{{ end }}</td>
   </tr>
 <table>
 
