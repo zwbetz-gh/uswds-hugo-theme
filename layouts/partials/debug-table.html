@@ -39,6 +39,14 @@
     <td>{{ .NextInSection }}</td>
   </tr>
   <tr>
+    <td>.OutputFormats</td>
+    <td>
+      {{ range .OutputFormats }}
+        {{ .Name }} 
+      {{ end }}
+    </td>
+  </tr>
+  <tr>
     <td>.Pages</td>
     <td>{{ .Pages }}</td>
   </tr>
@@ -49,6 +57,10 @@
   <tr>
     <td>.PrevInSection</td>
     <td>{{ .PrevInSection }}</td>
+  </tr>
+  <tr>
+    <td>.PublishDate</td>
+    <td>{{ .PublishDate }}</td>
   </tr>
   <tr>
     <td>.ReadingTime</td>
@@ -143,6 +155,10 @@
 <h2>Site</h2>
 <table class="{{ $class }}">
   <tr>
+    <td>site.BuildDrafts</td>
+    <td>{{ site.BuildDrafts }}</td>
+  </tr>
+  <tr>
     <td>site.Home</td>
     <td>{{ site.Home }}</td>
   </tr>
@@ -162,6 +178,18 @@
     <td>site.Pages</td>
     <td>{{ site.Pages }}</td>
   </tr>
+  <tr>
+    <td>site.RegularPages</td>
+    <td>{{ site.RegularPages }}</td>
+  </tr>
+  <tr>
+    <td>site.Sections</td>
+    <td>
+      {{ range site.Sections }}
+        {{ . }}
+      {{ end }}
+    </td>
+  </tr>
 </table>
 
 <h2>Hugo</h2>
@@ -173,6 +201,10 @@
   <tr>
     <td>hugo.BuildDate</td>
     <td>{{ hugo.BuildDate }}</td>
+  </tr>
+  <tr>
+    <td>hugo.CommitHash</td>
+    <td>{{ hugo.CommitHash }}</td>
   </tr>
   <tr>
     <td>hugo.Environment</td>
