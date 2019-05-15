@@ -51,3 +51,6 @@ blockquote {
   background-color: #fff;
   border-top: 1px solid #dcdee0;
 }
+#footer-debug .usa-accordion__button {
+  background-color: #dcdee0;
+}
