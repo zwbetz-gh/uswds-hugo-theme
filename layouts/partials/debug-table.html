@@ -273,3 +273,27 @@
     <td>{{ site.Title }}</td>
   </tr>
 </table>
+
+<h2>os.Stat</h2>
+<table class="{{ $class }}">
+  <tr>
+    <td>.IsDir</td>
+    <td>{{ with.File }}{{ (os.Stat .Path).IsDir }}{{ end }}</td>
+  </tr>
+  <tr>
+    <td>.Mode</td>
+    <td>{{ with.File }}{{ (os.Stat .Path).Mode }}{{ end }}</td>
+  </tr>
+  <tr>
+    <td>.ModTime</td>
+    <td>{{ with.File }}{{ (os.Stat .Path).ModTime }}{{ end }}</td>
+  </tr>
+  <tr>
+    <td>.Name</td>
+    <td>{{ with.File }}{{ (os.Stat .Path).Name }}{{ end }}</td>
+  </tr>
+  <tr>
+    <td>.Size</td>
+    <td>{{ with.File }}{{ print (os.Stat .Path).Size " bytes" }}{{ end }}</td>
+  </tr>
+</table>
