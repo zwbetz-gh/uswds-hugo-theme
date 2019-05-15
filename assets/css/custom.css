@@ -47,7 +47,7 @@ blockquote {
 }
 
 /* Footer */
-.usa-footer__secondary-section {
+#footer-debug {
   background-color: #fff;
   border-top: 1px solid #dcdee0;
 }
