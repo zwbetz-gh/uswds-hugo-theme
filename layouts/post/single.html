@@ -4,12 +4,13 @@
   <p>
     {{ $dateFormat := (partial "date-format.html" | string) }}
     {{ $publishDate := .PublishDate }}
-    <strong>Published: </strong>{{ $publishDate.Format $dateFormat }}
+    {{ $formattedPublishDate := $publishDate.Format $dateFormat }}
+    <strong>Published: </strong>{{ $formattedPublishDate }}
     
     {{ with .Lastmod }}
-      {{ if gt . $publishDate }}
-        <br>
-        <strong>Last modified: </strong>{{ .Format $dateFormat }}
+      {{ $formattedLastmod := .Format $dateFormat }}
+      {{ if gt $formattedLastmod $formattedPublishDate }}
+        | <strong>Lastmod: </strong>{{ $formattedLastmod }}
       {{ end }}
     {{ end }}
     
