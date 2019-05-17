@@ -47,10 +47,6 @@ blockquote {
 }
 
 /* Footer */
-#footer-debug {
-  background-color: #fff;
-  border-top: 1px solid #dcdee0;
-}
-#footer-debug .usa-accordion__button {
-  background-color: #dcdee0;
+#toggle-debug-info {
+  color: #1b1b1b;
 }
