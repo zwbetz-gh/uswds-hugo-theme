@@ -68,15 +68,18 @@
           <div class="grid-row grid-gap">
             <div class="desktop:grid-col-12">
 
-              <span class="">
-                Made with <a href="https://gohugo.io/">Hugo</a> & <a href="https://v2.designsystem.digital.gov/">USWDS</a> |  
-                <a href="/index.xml">RSS feed</a> |
-                <button id="toggle-debug-info" class="usa-button usa-button--unstyled">Toggle debug info</button>
-              </span>
+              <button id="toggle-debug-info" class="usa-button">Toggle debug info</button>
+              <br><br>
 
               <div id="debug-info" hidden="">
                 {{ partial "debug-table.html" . }}
               </div>
+
+              <span class="">
+                Made with <a href="https://gohugo.io/">Hugo</a> |
+                Themed by <a href="https://v2.designsystem.digital.gov/">USWDS</a> | 
+                <a href="/index.xml">RSS feed</a>
+              </span>
 
             </div>
           </div>
