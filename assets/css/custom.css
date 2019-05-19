@@ -45,3 +45,13 @@ blockquote {
 .usa-nav.is-visible {
   border-left: 1px solid #dcdee0;
 }
+
+/* Tags */
+.post-tags a {
+  color: inherit;
+}
+
+/* Footer */
+#debug-info-button {
+  background-color: #fff;
+}

@@ -17,14 +17,16 @@
     {{ $tags := slice }}
     {{ with .Params.tags }}
       <br>
-      <strong>Tags: </strong>
-      {{ range . }}
-        {{ $href := print ("tags/" | absLangURL) (. | urlize) "/" }}
-        {{ $element := printf "<a href=\"%s\">%s</a>" $href . }}
-        {{ $tags = $tags | append $element }}
+      <span class="post-tags">
+        <strong>Tags: </strong>
+        {{ range . }}
+          {{ $href := print ("tags/" | absLangURL) (. | urlize) "/" }}
+          {{ $element := printf "<a href=\"%s\">%s</a>" $href . }}
+          {{ $tags = $tags | append $element }}
+        {{ end }}
+        {{ delimit $tags ", " }}
       {{ end }}
-      {{ delimit $tags ", " }}
-    {{ end }}
+    </span>
   </p>
   
   {{ if ne .Params.toc false }}
