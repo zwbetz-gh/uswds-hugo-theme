@@ -68,6 +68,15 @@
           <div class="grid-row grid-gap">
             <div class="desktop:grid-col-12">
 
+              <span class="">
+                Made with <a href="https://gohugo.io/">Hugo</a> v{{ hugo.Version}} |
+                Themed by <a href="https://v2.designsystem.digital.gov/">USWDS</a> v2.0.2 | 
+                <a href="/index.xml">RSS feed</a>
+              </span>
+              
+              <br>
+              <br>
+
               {{ $heading := "Debug info" }}
               {{ $id := $heading | md5 }}
               <div class="usa-accordion">
@@ -80,14 +89,7 @@
                   {{ partial "debug-table.html" . }}
                 </div>
               </div>
-              <br>
-
-              <span class="">
-                Made with <a href="https://gohugo.io/">Hugo</a> v{{ hugo.Version}} |
-                Themed by <a href="https://v2.designsystem.digital.gov/">USWDS</a> v2.0.2 | 
-                <a href="/index.xml">RSS feed</a>
-              </span>
-
+              
             </div>
           </div>
         </div>

@@ -54,4 +54,5 @@ blockquote {
 /* Footer */
 #debug-info-button {
   background-color: #fff;
+  border: 1px solid;
 }
