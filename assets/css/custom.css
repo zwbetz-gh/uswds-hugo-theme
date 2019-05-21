@@ -1,3 +1,13 @@
+/* Background color */
+body {
+  background-color: #dcdee0;
+}
+
+header,
+main {
+  background-color: #fff;
+}
+
 /* Focus */
 details summary:focus {
   outline-offset: 0px;
