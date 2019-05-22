@@ -35,15 +35,4 @@
   
   {{ partial "header-link.html" .Content }}
 
-  <br>
-  <p>
-    {{ with .NextInSection }}
-      <strong>Next: </strong><a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
-    <br>
-    {{ with .PrevInSection }}
-      <strong>Prev: </strong><a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
-  </p>
-
 {{ end }}
