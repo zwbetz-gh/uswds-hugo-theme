@@ -3,8 +3,7 @@
   <ul>
     {{ range .Data.Terms.ByCount }}
       <li>
-        <span class="usa-sr-only">Tag count</span>
-        <span class="usa-tag">{{ .Count }}</span>
+        <span class="text-gray-50">({{ .Count }})</span>
         <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
       </li>
     {{ end }}

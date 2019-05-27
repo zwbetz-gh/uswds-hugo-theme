@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   
-  <p>
+  <p class="text-gray-50">
     {{ $dateFormat := (partial "date-format.html" | string) }}
     {{ $publishDate := .PublishDate }}
     {{ $formattedPublishDate := $publishDate.Format $dateFormat }}

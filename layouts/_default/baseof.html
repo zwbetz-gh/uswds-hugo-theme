@@ -77,18 +77,10 @@
               <br>
               <br>
 
-              {{ $heading := "Debug info" }}
-              {{ $id := $heading | md5 }}
-              <div class="usa-accordion">
-                <h2 class="usa-accordion__heading">
-                  <button id="debug-info-button" class="usa-accordion__button" aria-expanded="false" aria-controls="{{ $id }}">
-                    {{ $heading }}
-                  </button>
-                </h2>
-                <div id="{{ $id }}" class="usa-accordion__content usa-prose">
-                  {{ partial "debug-table.html" . }}
-                </div>
-              </div>
+              <details>
+                <summary>Hugo debug info</summary>
+                {{ partial "debug-table.html" . }}
+              </details>
               
             </div>
           </div>
