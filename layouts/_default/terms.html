@@ -4,7 +4,7 @@
     {{ range .Data.Terms.ByCount }}
       <li>
         <span class="text-gray-50">({{ .Count }})</span>
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
       </li>
     {{ end }}
   </ul>

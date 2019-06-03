@@ -5,7 +5,7 @@
       <li>
         {{ $dateFormat := (partial "date-format.html" | string) }}
         <span class="text-gray-50">{{ .PublishDate.Format $dateFormat }}</span>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
     {{ end }}
   </ul>

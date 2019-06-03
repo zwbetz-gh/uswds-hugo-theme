@@ -10,10 +10,10 @@
     <title>{{ .Title }} | {{ site.Title }}</title>
 
     {{ $themeCss := resources.Get "css/uswds.min.css" | fingerprint }}
-    <link rel="stylesheet" href="{{ $themeCss.Permalink }}">
+    <link rel="stylesheet" href="{{ $themeCss.RelPermalink }}">
     
     {{ $customCss := resources.Get "css/custom.css" | fingerprint | minify }}
-    <link rel="stylesheet" href="{{ $customCss.Permalink }}">
+    <link rel="stylesheet" href="{{ $customCss.RelPermalink }}">
   </head>
   <body>
     <a class="usa-skipnav" href="#main-content">Skip to main content</a>
@@ -89,7 +89,7 @@
     </footer>
 
     {{ $themeJs := resources.Get "js/uswds.min.js" | fingerprint }}
-    <script src="{{ $themeJs.Permalink }}"></script>
+    <script src="{{ $themeJs.RelPermalink }}"></script>
 
     {{ partial "google-analytics-async.html" . }}
   </body>

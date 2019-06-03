@@ -20,8 +20,8 @@
 {{ end }}
 
 <figure>
-  <a href="{{ $original.Permalink }}">
-    <img src="{{ $new.Permalink }}" alt="{{ $alt }}">
+  <a href="{{ $original.RelPermalink }}">
+    <img src="{{ $new.RelPermalink }}" alt="{{ $alt }}">
   </a>
   <figcaption>{{ $caption | markdownify }}</figcaption>
 </figure>
