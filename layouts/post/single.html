@@ -35,4 +35,19 @@
   
   {{ partial "header-link.html" .Content }}
 
+  <br>
+  <div>
+    {{ with .PrevInSection }}
+    <a href="{{ .RelPermalink }}" class="usa-button float-left">
+      &lt; Prev
+    </a>
+    {{ end }}
+
+    {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}" class="usa-button float-right">
+      Next &gt;
+    </a>
+    {{ end }}
+  </div>
+
 {{ end }}
