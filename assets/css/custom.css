@@ -63,6 +63,7 @@ blockquote {
 /* Prev and Next post buttons */
 #prev-and-next {
   max-width: initial;
+  margin-top: 2em;
 }
 #prev-and-next .usa-button {
   width: initial;
