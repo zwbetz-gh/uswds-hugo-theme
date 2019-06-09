@@ -35,8 +35,7 @@
   
   {{ partial "header-link.html" .Content }}
 
-  <br>
-  <div>
+  <p id="prev-and-next">
     {{ with .PrevInSection }}
     <a href="{{ .RelPermalink }}" class="usa-button float-left">
       &lt; Prev
@@ -48,6 +47,6 @@
       Next &gt;
     </a>
     {{ end }}
-  </div>
+  </p>
 
 {{ end }}

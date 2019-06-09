@@ -60,6 +60,15 @@ blockquote {
   color: inherit;
 }
 
+/* Prev and Next post buttons */
+#prev-and-next {
+  max-width: initial;
+}
+#prev-and-next .usa-button {
+  width: initial;
+  margin-right: initial;
+}
+
 /* Footer */
 #footer-main {
   background-color: #fff;
