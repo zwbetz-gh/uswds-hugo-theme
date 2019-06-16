@@ -35,17 +35,13 @@
   
   {{ partial "header-link.html" .Content }}
 
-  <p id="prev-and-next">
-    {{ with .PrevInSection }}
-    <a href="{{ .RelPermalink }}" class="usa-button float-left">
-      &lt; Prev
-    </a>
-    {{ end }}
-
+  <p class="text-gray-50 post-next-prev">
     {{ with .NextInSection }}
-    <a href="{{ .RelPermalink }}" class="usa-button float-right">
-      Next &gt;
-    </a>
+      <strong>Next</strong> &rarr; <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ end }}
+    <br>
+    {{ with .PrevInSection }}
+      <strong>Previous</strong> &larr; <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{ end }}
   </p>
 
