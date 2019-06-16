@@ -75,3 +75,7 @@ blockquote {
 #footer-main a {
   color: #757575;
 }
+
+#toggle-debug-info {
+  background-color: #757575;
+}

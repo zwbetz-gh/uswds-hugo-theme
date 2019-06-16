@@ -67,10 +67,14 @@
         <div class="grid-container">
           <div class="grid-row grid-gap">
             <div class="grid-col-12">
-              Made with <a href="https://gohugo.io/">Hugo</a> v{{ hugo.Version}}. Themed by <a href="https://v2.designsystem.digital.gov/">USWDS</a> v2.0.3. <a href="/index.xml">RSS feed</a>. 
+              Made with <a href="https://gohugo.io/">Hugo</a> 
+              <br>
+              Themed by <a href="https://designsystem.digital.gov/">USWDS</a> 
+              <br>
+              <a href="/index.xml">RSS feed</a>
               <br><br>
               <details>
-                <summary>Hugo debug info</summary>
+                <summary class="usa-button" id="toggle-debug-info">Toggle debug info</summary>
                 {{ partial "debug-table.html" . }}
               </details>
             </div>
