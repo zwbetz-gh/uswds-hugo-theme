@@ -67,16 +67,20 @@
         <div class="grid-container">
           <div class="grid-row grid-gap">
             <div class="grid-col-12">
-              Made with <a href="https://gohugo.io/">Hugo</a> 
-              <br>
-              Themed by <a href="https://designsystem.digital.gov/">USWDS</a> 
-              <br>
-              <a href="/index.xml">RSS feed</a>
+              
+              Made with <a href="https://gohugo.io/">Hugo</a> and <a href="https://designsystem.digital.gov/">USWDS</a>
               <br><br>
-              <details>
-                <summary class="usa-button" id="toggle-debug-info">Toggle debug info</summary>
-                {{ partial "debug-table.html" . }}
-              </details>
+              <div class="usa-accordion usa-accordion--bordered">
+                <h2 class="usa-accordion__heading">
+                  <button class="usa-accordion__button" aria-expanded="false" aria-controls="debug-info">
+                    Debug info
+                  </button>
+                </h2>
+                <div id="debug-info" class="usa-accordion__content usa-prose">
+                  {{ partial "debug-table.html" . }}
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

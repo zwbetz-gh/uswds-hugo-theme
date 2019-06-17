@@ -31,3 +31,6 @@ menu:
     - name: Tags
       url: /tags/
       weight: 3
+    - name: RSS
+      url: /index.xml
+      weight: 4
