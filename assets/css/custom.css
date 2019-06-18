@@ -60,11 +60,6 @@ blockquote {
   color: inherit;
 }
 
-/* Next and Previous */
-.post-next-prev a {
-  color: inherit;
-}
-
 /* Footer */
 #footer-main {
   background-color: #fff;
@@ -74,8 +69,4 @@ blockquote {
 #footer-main,
 #footer-main a {
   color: #757575;
-}
-
-#toggle-debug-info {
-  background-color: #757575;
 }
