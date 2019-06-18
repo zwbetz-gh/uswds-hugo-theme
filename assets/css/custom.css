@@ -28,21 +28,24 @@ h6 code {
 
 pre {
   padding: 1rem;
+  border: 1px solid #757575;
 }
 
 pre code {
   padding: 0;
   background-color: transparent;
+  border: none;
 }
 
 code {
   padding: 2px 0.25rem;
   border-radius: 2px;
+  border: 1px solid #757575;
 }
 
 /* Blockquote */
 blockquote {
-  border-left: .25rem solid #dcdee0;
+  border-left: .25rem solid #757575;
   padding-left: 1rem;
   margin-left: 0;
   max-width: 68ex;
@@ -50,13 +53,15 @@ blockquote {
 
 /* Table of contents */
 .toc {
-  border: .25rem solid #dcdee0;
+  border: .25rem solid #757575;
   padding: 1rem; 
   margin-top: 1rem;
+  color: #757575;
 }
 
 .toc a {
   text-decoration: none;
+  color: #757575;
 }
 
 /* Navbar */
@@ -81,10 +86,13 @@ blockquote {
   border-top: 1px solid #dcdee0;
 }
 
-#footer-main,
-#footer-main a {
+#footer-main * {
   color: #757575;
-  /* font-weight: bold; */
+}
+
+#footer-main a {
+  font-weight: bold;
+  text-decoration: none;
 }
 
 #debug-info button {
