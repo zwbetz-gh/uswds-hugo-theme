@@ -70,13 +70,13 @@
               
               Made with <a href="https://gohugo.io/">Hugo</a> and <a href="https://designsystem.digital.gov/">USWDS</a>
               <br><br>
-              <div class="usa-accordion usa-accordion--bordered">
+              <div class="usa-accordion" id="debug-info">
                 <h2 class="usa-accordion__heading">
-                  <button class="usa-accordion__button" aria-expanded="false" aria-controls="debug-info">
+                  <button class="usa-accordion__button" aria-expanded="false" aria-controls="debug-info-content">
                     Debug info
                   </button>
                 </h2>
-                <div id="debug-info" class="usa-accordion__content usa-prose">
+                <div id="debug-info-content" class="usa-accordion__content usa-prose">
                   {{ partial "debug-table.html" . }}
                 </div>
               </div>
