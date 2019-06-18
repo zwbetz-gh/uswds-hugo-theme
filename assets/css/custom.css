@@ -1,3 +1,8 @@
+/* Links */
+main a:visited {
+  color: #00e;
+}
+
 /* Focus */
 details summary:focus {
   outline-offset: 0px;
@@ -79,9 +84,11 @@ blockquote {
 #footer-main,
 #footer-main a {
   color: #757575;
+  /* font-weight: bold; */
 }
 
 #debug-info button {
-  background-color: initial;
-  border: .25rem solid #dcdee0;
+  background-color: #fff;
+  color: #757575;
+  border: 1px solid #757575;
 }
