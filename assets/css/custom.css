@@ -59,7 +59,8 @@ blockquote {
   color: #757575;
 }
 
-.toc a {
+.toc a,
+.toc a:visited {
   text-decoration: none;
   color: #757575;
 }
@@ -70,7 +71,8 @@ blockquote {
 }
 
 /* Tags */
-.post-tags a {
+.post-tags a,
+.post-tags a:visited {
   color: inherit;
   text-decoration: none;
 }
@@ -90,7 +92,8 @@ blockquote {
   color: #757575;
 }
 
-#footer-main a {
+#footer-main a,
+#footer-main a:visited {
   font-weight: bold;
   text-decoration: none;
 }
