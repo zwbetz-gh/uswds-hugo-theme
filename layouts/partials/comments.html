@@ -1,0 +1,45 @@
+<div id="disqus-container">
+  {{ with site.DisqusShortname }}
+    <button id="disqus-button" class="usa-button" onclick="showComments()">Load comments</button>
+    <div id="disqus-comments">
+      {{ if site.IsServer }}
+        <p><em>Disqus comments are disabled when running local server.</em></p>
+        <script>
+          function showComments() {
+            // Remove button
+            var disqusButton = document.getElementById('disqus-button');
+            disqusButton.parentNode.removeChild(disqusButton); 
+            // Un-hide comments
+            var disqusComments = document.getElementById('disqus-comments');
+            disqusComments.style.display = 'block'; 
+          }
+        </script>
+      {{ else }}
+        <div id="disqus_thread">
+        </div>
+        <script>
+          function showComments() {
+            // Config
+            var disqus_config = function () {
+            };
+            // Build and append comments 
+            var d = document;
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = '//' + "{{ . }}" + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+
+            // Remove button
+            var disqusButton = document.getElementById('disqus-button');
+            disqusButton.parentNode.removeChild(disqusButton); 
+            // Un-hide comments
+            var disqusComments = document.getElementById('disqus-comments');
+            disqusComments.style.display = 'block'; 
+          }
+        </script>
+      {{ end }}
+      <noscript>Enable JavaScript to view Disqus comments.</noscript>
+    </div>
+  {{ end }}
+</div>

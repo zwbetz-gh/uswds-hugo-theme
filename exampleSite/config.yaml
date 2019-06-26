@@ -11,6 +11,8 @@ enableGitInfo: true
 pygmentsCodefences: true
 pygmentsStyle: pygments
 
+disqusShortname: shortname
+
 taxonomies:
   tag: tags
 

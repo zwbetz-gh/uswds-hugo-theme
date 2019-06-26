@@ -103,3 +103,17 @@ blockquote {
   color: #757575;
   border: 1px solid #757575;
 }
+
+/* Disqus comments */
+#disqus-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#disqus-button {
+  width: 100%;
+}
+
+#disqus-comments {
+  display: none; 
+}
