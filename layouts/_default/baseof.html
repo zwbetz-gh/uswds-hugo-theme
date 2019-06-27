@@ -66,20 +66,15 @@
       <div class="usa-footer__secondary-section" id="footer-main">
         <div class="grid-container">
           <div class="grid-row grid-gap">
-            <div class="grid-col-12">
+            <div class="grid-col-12 text-center">
               
               Made with <a href="https://gohugo.io/">Hugo</a> and <a href="https://designsystem.digital.gov/">USWDS</a>
+              {{ if site.IsServer }}
               <br><br>
-              <div class="usa-accordion" id="debug-info">
-                <h2 class="usa-accordion__heading">
-                  <button class="usa-accordion__button" aria-expanded="false" aria-controls="debug-info-content">
-                    Debug info
-                  </button>
-                </h2>
-                <div id="debug-info-content" class="usa-accordion__content usa-prose">
+                <div class="text-left">
                   {{ partial "debug-table.html" . }}
                 </div>
-              </div>
+              {{ end }}
 
             </div>
           </div>
