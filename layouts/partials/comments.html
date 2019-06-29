@@ -6,12 +6,7 @@
         <p><em>Disqus comments are disabled when running local server.</em></p>
         <script>
           function showComments() {
-            // Remove button
-            var disqusButton = document.getElementById('disqus-button');
-            disqusButton.parentNode.removeChild(disqusButton); 
-            // Un-hide comments
-            var disqusComments = document.getElementById('disqus-comments');
-            disqusComments.style.display = 'block'; 
+            {{ partial "comments-common.js" . | safeJS }}
           }
         </script>
       {{ else }}
@@ -19,23 +14,8 @@
         </div>
         <script>
           function showComments() {
-            // Config
-            var disqus_config = function () {
-            };
-            // Build and append comments 
-            var d = document;
-            var s = d.createElement('script');
-            s.async = true;
-            s.src = '//' + "{{ . }}" + '.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', + new Date());
-            (d.head || d.body).appendChild(s);
-
-            // Remove button
-            var disqusButton = document.getElementById('disqus-button');
-            disqusButton.parentNode.removeChild(disqusButton); 
-            // Un-hide comments
-            var disqusComments = document.getElementById('disqus-comments');
-            disqusComments.style.display = 'block'; 
+            {{ partial "comments-disqus.js" . | safeJS }}
+            {{ partial "comments-common.js" . | safeJS }}
           }
         </script>
       {{ end }}
