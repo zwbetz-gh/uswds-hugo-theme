@@ -2,6 +2,7 @@
 title: "Quotes by Carl Jung"
 date: 2019-05-02
 tags: ["quotes"]
+show_comments: false
 ---
 
 {{% blockquote author="Carl Jung" %}}

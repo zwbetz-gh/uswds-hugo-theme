@@ -35,6 +35,8 @@
   
   {{ partial "header-link.html" .Content }}
 
-  {{ partial "comments.html" . }}
+  {{ if ne .Params.show_comments false }}
+    {{ partial "comments.html" . }}
+  {{ end }}
 
 {{ end }}
