@@ -38,9 +38,21 @@ From the root of `themes/uswds-hugo-theme/exampleSite`:
 hugo server --themesDir ../..
 ```
 
-## Configuration
+## Global configuration
 
-Copy the `config.yaml` from the [`exampleSite`](https://github.com/zwbetz-gh/uswds-hugo-theme/tree/master/exampleSite), then edit as desired. 
+Copy the `config.yaml` from the [`exampleSite`](https://github.com/zwbetz-gh/uswds-hugo-theme/tree/master/exampleSite), then edit as desired. See this file for all valid global params. 
+
+## Post configuration
+
+Valid post params:
+
+### toc
+
+If `true`, shows a table of contents.
+
+### show_comments
+
+If `false`, hides comments. 
 
 ## Shortcodes
 
