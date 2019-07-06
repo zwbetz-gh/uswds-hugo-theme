@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   <ul>
-    {{ range .Data.Terms.ByCount }}
+    {{ range .Data.Terms.Alphabetical }}
       <li>
         <span class="text-gray-50">({{ .Count }})</span>
         <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
