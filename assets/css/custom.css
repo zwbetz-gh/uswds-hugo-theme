@@ -1,5 +1,6 @@
 /* Links */
-main a:visited {
+main a:visited,
+.usa-skipnav:visited {
   color: #00e;
 }
 
