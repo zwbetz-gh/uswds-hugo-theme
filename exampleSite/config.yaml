@@ -8,6 +8,9 @@ timeout: 45000
 googleAnalytics: UA-123456789-1
 enableGitInfo: true
 
+outputs:
+  home: [HTML, RSS, JSON]
+
 pygmentsCodefences: true
 pygmentsStyle: pygments
 

@@ -1,0 +1,13 @@
+{{ $hugo := dict "Version" hugo.Version "BuildDate" hugo.BuildDate "CommitHash" hugo.CommitHash "Environment" hugo.Environment }}
+
+{{ $site := dict "BaseURL" site.BaseURL "IsMultiLingual" site.IsMultiLingual "IsServer" site.IsServer "LastChange" site.LastChange "RSSLink" site.RSSLink "Title" site.Title }}
+
+{{ $pages := slice }}
+{{ range site.RegularPages.ByPublishDate.Reverse }}
+  {{ $file := dict "Path" .File.Path "LogicalName" .File.LogicalName "TranslationBaseName" .File.TranslationBaseName "ContentBaseName" .File.ContentBaseName "BaseFileName" .File.BaseFileName "Ext" .File.Ext "Lang" .File.Lang "Dir" .File.Dir "UniqueID" .File.UniqueID }}
+  {{ $page := dict "file" $file "page" . }}
+  {{ $pages = $pages | append $page }}
+{{ end }}
+
+{{ $json := dict "Hugo" $hugo "Site" $site "Pages" $pages }}
+{{ $json | jsonify }}
