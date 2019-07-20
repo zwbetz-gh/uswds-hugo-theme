@@ -1,13 +1,11 @@
-{{ $hugo := dict "Version" hugo.Version "BuildDate" hugo.BuildDate "CommitHash" hugo.CommitHash "Environment" hugo.Environment }}
-
-{{ $site := dict "BaseURL" site.BaseURL "IsMultiLingual" site.IsMultiLingual "IsServer" site.IsServer "LastChange" site.LastChange "RSSLink" site.RSSLink "Title" site.Title }}
-
-{{ $pages := slice }}
-{{ range site.RegularPages.ByPublishDate.Reverse }}
-  {{ $file := dict "Path" .File.Path "LogicalName" .File.LogicalName "TranslationBaseName" .File.TranslationBaseName "ContentBaseName" .File.ContentBaseName "BaseFileName" .File.BaseFileName "Ext" .File.Ext "Lang" .File.Lang "Dir" .File.Dir "UniqueID" .File.UniqueID }}
-  {{ $page := dict "file" $file "page" . }}
-  {{ $pages = $pages | append $page }}
-{{ end }}
-
-{{ $json := dict "Hugo" $hugo "Site" $site "Pages" $pages }}
-{{ $json | jsonify }}
+{{- $hugo := dict "Version" hugo.Version "BuildDate" hugo.BuildDate "CommitHash" hugo.CommitHash "Environment" hugo.Environment }}
+{{- $site := dict "BaseURL" site.BaseURL "IsMultiLingual" site.IsMultiLingual "IsServer" site.IsServer "LastChange" site.LastChange "RSSLink" site.RSSLink "Title" site.Title "Language" site.Language }}
+{{- $pages := slice }}
+{{- range site.RegularPages.ByPublishDate.Reverse }}
+  {{- $file := dict "Path" .File.Path "LogicalName" .File.LogicalName "TranslationBaseName" .File.TranslationBaseName "ContentBaseName" .File.ContentBaseName "BaseFileName" .File.BaseFileName "Ext" .File.Ext "Lang" .File.Lang "Dir" .File.Dir "UniqueID" .File.UniqueID }}
+  {{- $stat := dict "IsDir" (os.Stat (print "content/" .File.Path)).IsDir "Mode" (os.Stat (print "content/" .File.Path)).Mode "ModTime" (os.Stat (print "content/" .File.Path)).ModTime "Name" (os.Stat (print "content/" .File.Path)).Name "Size" (os.Stat (print "content/" .File.Path)).Size }}
+  {{- $page := dict "File" $file "Stat" $stat "Plain" .Plain "FuzzyWordCount" .FuzzyWordCount "WordCount" .WordCount "ReadingTime" .ReadingTime "Len" .Len "Permalink" .Permalink "RelPermalink" .RelPermalink "Name" .Name "Title" .Title "Lastmod" .Lastmod "PublishDate" .PublishDate "Aliases" .Aliases "Kind" .Kind "Section" .Section "Type" .Type "Weight" .Weight "GitInfo" .GitInfo }}
+  {{- $pages = $pages | append $page }}
+{{- end }}
+{{- $json := dict "hugo" $hugo "site" $site "pages" $pages }}
+{{- $json | jsonify }}
