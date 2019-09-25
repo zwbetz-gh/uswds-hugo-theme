@@ -8,6 +8,9 @@ timeout: 45000
 googleAnalytics: UA-123456789-1
 enableGitInfo: true
 
+params:
+  google_ads: ca-pub-1234567812345678
+
 outputs:
   home: [HTML, RSS, JSON]
 
