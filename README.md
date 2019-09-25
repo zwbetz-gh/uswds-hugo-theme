@@ -12,7 +12,7 @@ https://uswds-hugo-theme.netlify.com/
 
 ## Minimum Hugo version
 
-Hugo extended version `0.55.5` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
+Hugo extended version `0.58.3` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
 
 ## Installation
 
