@@ -85,7 +85,7 @@
     {{ $themeJs := resources.Get "js/uswds.min.js" | fingerprint }}
     <script src="{{ $themeJs.RelPermalink }}"></script>
 
-    {{ partial "google-analytics-async.html" . }}
-    {{ partial "google-ads-async.html" . }}
+    {{ partial "google-analytics.html" . }}
+    {{ partial "google-ads.html" . }}
   </body>
 </html>
