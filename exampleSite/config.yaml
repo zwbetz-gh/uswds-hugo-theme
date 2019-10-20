@@ -10,6 +10,11 @@ enableGitInfo: true
 
 params:
   google_ads: ca-pub-1234567812345678
+  footer: >
+    Made with [Hugo](https://gohugo.io/) &bull;
+    Themed by [USWDS](https://designsystem.digital.gov/) &bull;
+    Deployed to [Netlify](https://www.netlify.com/) &bull;
+    Content in [Git](https://github.com/zwbetz-gh/uswds-hugo-theme)
 
 outputs:
   home: [HTML, RSS, JSON]
