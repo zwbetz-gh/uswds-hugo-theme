@@ -5,7 +5,7 @@ description = "TODO"
 homepage = "https://github.com/zwbetz-gh/uswds-hugo-theme"
 tags = ["todo"]
 features = ["todo"]
-min_version = "0.58.3"
+min_version = "0.60.1"
 
 [author]
   name = "Zachary Betz"
