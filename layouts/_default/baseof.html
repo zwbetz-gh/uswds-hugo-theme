@@ -70,6 +70,8 @@
               
               {{ with site.Params.footer }}
                 {{ . | markdownify }}
+                <br>
+                Last deployed on {{ now.Format "2006-01-02 15:04 -0700" }}
               {{ end }}
 
               {{ if false }}
