@@ -2,29 +2,41 @@
 title: Home
 ---
 
-{{< accordion >}}
+Here are some quotes:
 
-{{< accordion-item heading="2" summary="First Amendment" >}}
-Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.
-{{< /accordion-item >}}
+{{< blockquote author="Carl Rogers" >}}
+The curious paradox is that when I accept myself just as I am, then I can change.
+{{< /blockquote >}}
 
-{{< accordion-item heading="2" summary="Second Amendment" >}}
-A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
+{{< blockquote author="Carl Rogers" >}}
+The good life is a process, not a state of being. It is a direction not a destination.
+{{< /blockquote >}}
 
-- This is a list item
-- Another list item
-{{< /accordion-item >}}
+{{< blockquote author="Carl Rogers" >}}
+When I look at the world I'm pessimistic, but when I look at people I am optimistic.
+{{< /blockquote >}}
 
-{{< accordion-item heading="2" summary="Third Amendment" >}}
-No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.
-{{< /accordion-item >}}
+{{< blockquote author="Carl Rogers" >}}
+What is most personal is most universal.
+{{< /blockquote >}}
 
-{{< accordion-item heading="2" summary="Fourth Amendment" >}}
-The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.
-{{< /accordion-item >}}
+{{< blockquote author="Carl Rogers" >}}
+In my early professional years I was asking the question: How can I treat, or cure, or change this person? Now I would phrase the question in this way: How can I provide a relationship which this person may use for his own personal growth?
+{{< /blockquote >}}
 
-{{< accordion-item heading="2" summary="Fifth Amendment" >}}
-No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.
-{{< /accordion-item >}}
+{{< blockquote author="Carl Rogers" >}}
+When a person realizes he has been deeply heard, his eyes moisten. I think in some real sense he is weeping for joy. It is as though he were saying, "Thank God, somebody heard me. Someone knows what it's like to be me".
+{{< /blockquote >}}
 
-{{< /accordion >}}
+{{< blockquote author="Carl Rogers" >}}
+When the other person is hurting, confused, troubled, anxious, alienated, terrified; or when he or she is doubtful of self-worth, uncertain as to identity, then understanding is called for. The gentle and sensitive companionship of an empathic stance… provides illumination and healing. In such situations deep understanding is, I believe, the most precious gift one can give to another.
+{{< /blockquote >}}
+
+{{< blockquote author="Carl Rogers" >}}
+To be with another in this \[empathic\] way means that for the time being, you lay aside your own views and values in order to enter another's world without prejudice. In some sense it means that you lay aside your self; this can only be done by persons who are secure enough in themselves that they know they will not get lost in what may turn out to be the strange or bizarre world of the other, and that they can comfortably return to their own world when they wish.
+Perhaps this description makes clear that being empathic is a complex, demanding, and strong -- yet subtle and gentle -- way of being.
+{{< /blockquote >}}
+
+{{< blockquote author="Carl Rogers" >}}
+I believe it will have become evident why, for me, adjectives such as happy, contented, blissful, enjoyable, do not seem quite appropriate to any general description of this process I have called the good life, even though the person in this process would experience each one of these at the appropriate times. But adjectives which seem more generally fitting are adjectives such as enriching, exciting, rewarding, challenging, meaningful. This process of the good life is not, I am convinced, a life for the faint-fainthearted. It involves the stretching and growing of becoming more and more of one's potentialities. It involves the courage to be. It means launching oneself fully into the stream of life. Yet the deeply exciting thing about human beings is that when the individual is inwardly free, he chooses as the good life this process of becoming.
+{{< /blockquote >}}

@@ -56,29 +56,6 @@ If `false`, hides comments.
 
 ## Shortcodes
 
-### accordion
-
-```
-{{< accordion >}}
-
-{{< accordion-item heading="2" summary="First Amendment" >}}
-Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.
-{{< /accordion-item >}}
-
-{{< accordion-item heading="2" summary="Second Amendment" >}}
-A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
-{{< /accordion-item >}}
-
-{{< accordion-item heading="2" summary="Some summary" >}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc justo ligula, laoreet quis leo sit amet, ornare luctus orci. Maecenas eu mollis felis, quis blandit justo. 
-
-- This is a list item
-- Another list item
-{{< /accordion-item >}}
-
-{{< /accordion >}}
-```
-
 ### blockquote
 
 The `author` param is optional. 
