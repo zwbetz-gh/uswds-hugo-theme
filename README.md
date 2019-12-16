@@ -4,7 +4,7 @@
 
 A Hugo theme made with [United States Web Design System](https://v2.designsystem.digital.gov/). 
 
-Made specifically for [my site](https://zwbetz.com/).
+Made specifically for [my site](https://github.com/zwbetz-gh/zwbetz).
 
 ## Demo
 
