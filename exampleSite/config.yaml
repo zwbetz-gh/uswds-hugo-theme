@@ -22,7 +22,7 @@ outputs:
 pygmentsCodefences: true
 pygmentsStyle: pygments
 
-disqusShortname: shortname
+disqusShortname:
 
 taxonomies:
   tag: tags

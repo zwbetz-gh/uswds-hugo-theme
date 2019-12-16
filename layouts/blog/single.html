@@ -35,6 +35,16 @@
   
   {{ partial "header-link.html" .Content }}
 
+  {{ with .NextInSection }}
+    <br>
+    <strong>Next:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ end }}
+
+  {{ with .PrevInSection }}
+    <br>
+    <strong>Previous:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ end }}
+  
   {{ if ne .Params.show_comments false }}
     {{ partial "comments.html" . }}
   {{ end }}
