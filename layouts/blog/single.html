@@ -10,7 +10,7 @@
     {{ with .Lastmod }}
       {{ $formattedLastmod := .Format $dateFormat }}
       {{ if gt $formattedLastmod $formattedPublishDate }}
-        | <strong>Lastmod: </strong>{{ $formattedLastmod }}
+        &bull; <strong>Lastmod: </strong>{{ $formattedLastmod }}
       {{ end }}
     {{ end }}
     
@@ -24,7 +24,7 @@
           {{ $element := printf "<a href=\"%s\">%s</a>" $href . }}
           {{ $tags = $tags | append $element }}
         {{ end }}
-        {{ delimit $tags ", " }}
+        {{ delimit $tags " &bull; " }}
       {{ end }}
     </span>
   </p>
