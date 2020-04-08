@@ -1,5 +1,6 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
+  <p class="text-gray-50">Count: {{ len .Pages }}</p>
   <ul>
     {{ range .Data.Terms.Alphabetical }}
       <li>

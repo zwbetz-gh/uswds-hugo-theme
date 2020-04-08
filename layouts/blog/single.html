@@ -37,12 +37,16 @@
 
   {{ with .NextInSection }}
     <br>
-    <strong>Next:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="text-gray-50">
+      <strong>Next:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </span>
   {{ end }}
 
   {{ with .PrevInSection }}
     <br>
-    <strong>Previous:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <span class="text-gray-50">
+      <strong>Previous:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </span>
   {{ end }}
   
   {{ if ne .Params.show_comments false }}
