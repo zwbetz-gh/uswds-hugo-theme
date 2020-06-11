@@ -1,13 +1,20 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  <p class="text-gray-50">Count: {{ len .Pages }}</p>
-  <ul>
-    {{ range .Pages.ByPublishDate.Reverse }}
-      <li>
-        {{ $dateFormat := (partial "date-format.html" | string) }}
-        <span class="text-gray-50">{{ .PublishDate.Format $dateFormat }}</span>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </li>
-    {{ end }}
-  </ul>
+<h1>{{ .Title }}</h1>
+<p class="text-gray-50">Count: {{ len .Pages }}</p>
+<input
+  class="usa-input"
+  id="search"
+  type="text"
+  placeholder="Search blog posts..."
+  aria-label="Search blog posts"
+/>
+<ul id="list">
+  {{ range .Pages.ByPublishDate.Reverse }}
+  <li>
+    {{ $dateFormat := (partial "date-format.html" | string) }}
+    <span class="text-gray-50">{{ .PublishDate.Format $dateFormat }}</span>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
 {{ end }}
