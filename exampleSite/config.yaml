@@ -15,6 +15,7 @@ params:
     Themed by [USWDS](https://designsystem.digital.gov/) &bull;
     Deployed to [Netlify](https://www.netlify.com/) &bull;
     Content in [GitHub](https://github.com/zwbetz-gh/uswds-hugo-theme)
+  search: true
 
 outputs:
   home: [HTML, RSS, JSON]

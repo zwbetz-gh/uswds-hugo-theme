@@ -90,8 +90,10 @@
     {{ $themeJs := resources.Get "js/uswds.min.js" | fingerprint }}
     <script src="{{ $themeJs.RelPermalink }}"></script>
 
+    {{ if site.Params.search }}
     {{ $searchJs := resources.Get "js/search.js" | fingerprint }}
     <script src="{{ $searchJs.RelPermalink }}"></script>
+    {{ end }}
 
     {{ partial "google-analytics.html" . }}
   </body>

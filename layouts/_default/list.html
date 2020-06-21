@@ -1,13 +1,15 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 <p class="text-gray-50" id="list-count">Count: {{ len .Pages }}</p>
+{{ if site.Params.search }}
 <input
   class="usa-input"
   id="search"
   type="text"
-  placeholder="Search blog posts..."
-  aria-label="Search blog posts"
+  placeholder="Search by title..."
+  aria-label="Search by title"
 />
+{{ end }}
 <ul id="list">
   {{ range .Pages.ByPublishDate.Reverse }}
   <li>
