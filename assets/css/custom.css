@@ -49,6 +49,7 @@ blockquote {
   border-left: .25rem solid #757575;
   padding-left: 1rem;
   margin-left: 0;
+  max-width: 68ex !important;
 }
 
 /* Table of contents */
