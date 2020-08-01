@@ -82,6 +82,14 @@ blockquote {
 }
 
 /* Footer */
+#next-and-prev {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid #dcdee0;
+  border-bottom: 1px solid #dcdee0;
+}
+
 #footer-main {
   background-color: #fff;
   border-top: 1px solid #dcdee0;

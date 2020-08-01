@@ -35,19 +35,18 @@
   
   {{ partial "header-link.html" .Content }}
 
-  {{ with .NextInSection }}
-    <br>
-    <span class="text-gray-50">
-      <strong>Next:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </span>
-  {{ end }}
-
-  {{ with .PrevInSection }}
-    <br>
-    <span class="text-gray-50">
-      <strong>Previous:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </span>
-  {{ end }}
+  <div id="next-and-prev">
+    {{ with .NextInSection }}
+      <div class="text-gray-50">
+        <strong>Next:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </div>
+    {{ end }}
+    {{ with .PrevInSection }}
+      <div class="text-gray-50">
+        <strong>Previous:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </div>
+    {{ end }}
+  </div>
   
   {{ if ne .Params.show_comments false }}
     {{ partial "comments.html" . }}
