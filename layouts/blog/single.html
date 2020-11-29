@@ -10,23 +10,26 @@
     {{ with .Lastmod }}
       {{ $formattedLastmod := .Format $dateFormat }}
       {{ if gt $formattedLastmod $formattedPublishDate }}
-        &bull; <strong>Lastmod: </strong>{{ $formattedLastmod }}
+        &bull; <strong>Last updated: </strong>{{ $formattedLastmod }}
       {{ end }}
     {{ end }}
     
-    {{ $tags := slice }}
-    {{ with .Params.tags }}
-      <br>
-      <span class="post-tags">
-        <strong>Tags: </strong>
+    {{ if site.Params.show_tags }}
+      {{ $tags := slice }}
+
+      {{ with .Params.tags }}
         {{ range . }}
           {{ $href := print ("tags/" | absLangURL) (. | urlize) "/" }}
           {{ $element := printf "<a href=\"%s\">%s</a>" $href . }}
           {{ $tags = $tags | append $element }}
         {{ end }}
-        {{ delimit $tags " &bull; " }}
       {{ end }}
-    </span>
+
+        <br>
+        <span class="post-tags">
+          <strong>Tags: </strong>{{ delimit $tags " &bull; " }}
+        </span>
+    {{ end }}
   </p>
   
   {{ if ne .Params.toc false }}

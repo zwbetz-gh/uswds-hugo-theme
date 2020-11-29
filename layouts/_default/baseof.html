@@ -71,8 +71,9 @@
               {{ with site.Params.footer }}
                 {{ . | markdownify }}
                 <br>
-                Last deployed on {{ now.Format "2006-01-02" }}
               {{ end }}
+
+              Site last updated {{ now.Format "2006-01-02" }}
 
               {{ if false }}
               <br><br>

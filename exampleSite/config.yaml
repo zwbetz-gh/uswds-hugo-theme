@@ -17,6 +17,7 @@ params:
     Content in [GitHub](https://github.com/zwbetz-gh/uswds-hugo-theme)
   search: true
   show_prev_next_links: true
+  show_tags: true
 
 outputs:
   home: [HTML, RSS, JSON]
@@ -43,12 +44,9 @@ menu:
     - name: Blog
       url: /blog/
       weight: 2
-    - name: Tags
-      url: /tags/
-      weight: 3
     - name: RSS
       url: /index.xml
-      weight: 4
+      weight: 3
 
 markup:
   defaultMarkdownHandler: goldmark
