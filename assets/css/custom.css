@@ -16,6 +16,7 @@ pre {
   font-size: .9rem;
   background-color: rgba(0,0,0,.05);
   font-weight: 400;
+  overflow-x: auto;
 }
 
 h1 code,
