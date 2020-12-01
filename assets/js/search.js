@@ -1,13 +1,15 @@
 (function () {
-  let searchElement = null;
-  let count = null;
+  function getSearchElement() {
+    return document.querySelector('#search');
+  }
 
-  function updateDisplayedCount() {
+  function updateDisplayedCount(count) {
     const listCount = document.querySelector('#list-count');
     listCount.innerText = 'Count: ' + count;
   }
 
-  function filterListItem(listItem) {
+  function filterListItem(listItem, count) {
+    const searchElement = getSearchElement();
     const searchTerm = searchElement.value.toUpperCase();
     const text = listItem.innerText.toUpperCase();
     if (text.includes(searchTerm)) {
@@ -19,21 +21,21 @@
   }
 
   function filterListItems() {
+    count = 0;
     const listItems = document.querySelectorAll('#list li');
     for (i = 0; i < listItems.length; i++) {
       const listItem = listItems[i];
-      filterListItem(listItem);
+      filterListItem(listItem, count);
     }
   }
 
   function handleEvent() {
-    count = 0;
     filterListItems();
     updateDisplayedCount();
   }
 
   function main() {
-    searchElement = document.querySelector('#search');
+    searchElement = getSearchElement();
     if (searchElement) {
       searchElement.addEventListener('keyup', handleEvent);
     }
