@@ -1,29 +1,43 @@
 (function () {
-  function updateCount(count) {
-    var listCount = document.getElementById("list-count");
-    listCount.innerText = "Count: " + count;
+  let searchElement = null;
+  let count = null;
+
+  function updateDisplayedCount() {
+    const listCount = document.querySelector('#list-count');
+    listCount.innerText = 'Count: ' + count;
   }
 
-  function onEvent() {
-    var count = 0;
-    var filter = search.value.toUpperCase();
-    var list = document.getElementById("list");
-    var listItems = list.getElementsByTagName("li");
-    for (i = 0; i < listItems.length; i++) {
-      var item = listItems[i];
-      var text = item.innerText.toUpperCase();
-      if (text.indexOf(filter) > -1) {
-        item.style.display = "";
-        count++;
-      } else {
-        item.style.display = "none";
-      }
+  function filterListItem(listItem) {
+    const searchTerm = searchElement.value.toUpperCase();
+    const text = listItem.innerText.toUpperCase();
+    if (text.includes(searchTerm)) {
+      listItem.style.display = '';
+      count++;
+    } else {
+      listItem.style.display = 'none';
     }
-    updateCount(count);
   }
 
-  var search = document.getElementById("search");
-  if (search) {
-    search.addEventListener("keyup", onEvent);
+  function filterListItems() {
+    const listItems = document.querySelectorAll('#list li');
+    for (i = 0; i < listItems.length; i++) {
+      const listItem = listItems[i];
+      filterListItem(listItem);
+    }
   }
+
+  function handleEvent() {
+    count = 0;
+    filterListItems();
+    updateDisplayedCount();
+  }
+
+  function main() {
+    searchElement = document.querySelector('#search');
+    if (searchElement) {
+      searchElement.addEventListener('keyup', handleEvent);
+    }
+  }
+
+  main();
 })();
