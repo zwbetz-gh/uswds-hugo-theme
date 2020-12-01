@@ -14,7 +14,7 @@
       {{ end }}
     {{ end }}
     
-    {{ if site.Params.show_tags }}
+    {{ if eq site.Params.show_tags true }}
       {{ $tags := slice }}
 
       {{ with .Params.tags }}
