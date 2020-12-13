@@ -38,43 +38,6 @@ From the root of `themes/uswds-hugo-theme/exampleSite`:
 hugo server --themesDir ../..
 ```
 
-## Global configuration
+## Configuration
 
 Copy the `config.yaml` from the [`exampleSite`](https://github.com/zwbetz-gh/uswds-hugo-theme/tree/master/exampleSite), then edit as desired. See this file for all valid global params. 
-
-## Post configuration
-
-Valid post params:
-
-### toc
-
-If `true`, shows a table of contents.
-
-### show_comments
-
-If `false`, hides comments. 
-
-## Shortcodes
-
-### blockquote
-
-The `author` param is optional. 
-
-```
-{{< blockquote author="Carl Jung" >}}
-Even a happy life cannot be without a measure of darkness, and the word happy would lose its meaning if it were not balanced by sadness. It is far better to take things as they come along with patience and equanimity.
-{{< /blockquote >}}
-```
-
-### figure
-
-Only works with page bundle images. 
-
-```
-{{< figure
-img="sun.jpg" 
-alt="The Sun" 
-caption="The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, with internal convective motion that generates a magnetic field via a dynamo process. It is by far the most important source of energy for life on Earth. [Credits](https://images.nasa.gov/details-GSFC_20171208_Archive_e000393.html)." 
-command="Resize" 
-options="800x" >}}
-```
