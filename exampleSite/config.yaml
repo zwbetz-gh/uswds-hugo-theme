@@ -13,7 +13,7 @@ params:
   footer: >
     Made with [Hugo](https://gohugo.io/) &bull;
     Themed by [USWDS](https://designsystem.digital.gov/) &bull;
-    Deployed to [Netlify](https://www.netlify.com/) &bull;
+    Deployed by [Netlify](https://www.netlify.com/) &bull;
     Content in [GitHub](https://github.com/zwbetz-gh/uswds-hugo-theme)
   show_footer_site_last_updated: true
   show_footer_debug: true
