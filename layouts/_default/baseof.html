@@ -1,56 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ site.Language.Lang }}">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
-    <link rel="canonical" href="{{ .Permalink }}">
-    {{ hugo.Generator }}
-    <title>{{ .Title }} | {{ site.Title }}</title>
-
-    {{ $themeCss := resources.Get "css/uswds.min.css" | fingerprint }}
-    <link rel="stylesheet" href="{{ $themeCss.RelPermalink }}">
-    
-    {{ $customCss := resources.Get "css/custom.css" | fingerprint | minify }}
-    <link rel="stylesheet" href="{{ $customCss.RelPermalink }}">
-  </head>
+  {{ partial "head.html" . }}
   <body>
-    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
-
-    <header class="usa-header usa-header--basic" role="banner">
-      <div class="usa-nav-container">
-        <div class="usa-navbar">
-          <div class="usa-logo" id="basic-mega-logo">
-            <em class="usa-logo__text">
-              <a href="/" title="Home" aria-label="Home">{{ site.Title }}</a>
-            </em>
-          </div>
-          <button class="usa-menu-btn">Menu</button>
-        </div>
-
-        <nav role="navigation" class="usa-nav">
-          <button class="usa-nav__close">
-            <img src="/img/close.svg" alt="close" />
-          </button>
-          <ul class="usa-nav__primary usa-accordion">
-            {{ $current := . }}
-            {{ range site.Menus.nav }}
-              {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
-              {{ $active = or $active (eq .Name $current.Title) }}
-              {{ $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog")) }}
-              {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
-              <li class="usa-nav__primary-item">
-                <a class="usa-nav__link {{ if $active }}usa-current{{ end }}" href="{{ .URL }}">
-                  <span>{{ .Name }}</span>
-                </a>
-              </li>
-            {{ end }}
-          </ul>
-        </nav>
-      </div>
-    </header>
-
+    {{ partial "skipnav.html" . }}
+    {{ partial "header.html" . }}
     <main class="usa-section" id="main-content">
       <div class="grid-container">
         <div class="grid-row grid-gap">
@@ -59,49 +12,8 @@
           </div>
         </div>
       </div>
-    </main>
-
-    <footer class="usa-footer usa-footer--slim" role="contentinfo">
-      
-      <div class="usa-footer__secondary-section" id="footer-main">
-        <div class="grid-container">
-          <div class="grid-row grid-gap">
-            <div class="grid-col-12 text-center">
-              
-              {{ with site.Params.footer }}
-                <div>
-                  {{ . | markdownify }}
-                </div>
-              {{ end }}
-
-              {{ if eq site.Params.show_footer_site_last_updated true }}
-                <div>
-                  Site last updated {{ now.Format "2006-01-02" }}
-                </div>
-              {{ end }}
-
-              {{ if eq site.Params.show_footer_debug true }}
-                <div class="text-left">
-                  <details>
-                    <summary class="text-center">Debug info</summary>
-                    {{ partial "debug-table.html" . }}
-                  </details>
-                </div>
-              {{ end }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    {{ $themeJs := resources.Get "js/uswds.min.js" | fingerprint }}
-    <script src="{{ $themeJs.RelPermalink }}"></script>
-
-    {{ if site.Params.search }}
-    {{ $searchJs := resources.Get "js/search.js" | fingerprint }}
-    <script src="{{ $searchJs.RelPermalink }}"></script>
-    {{ end }}
-
-    {{ partial "google-analytics.html" . }}
+    </main>    
+    {{ partial "footer.html" . }}
+    {{ partial "script.html" . }}
   </body>
 </html>
