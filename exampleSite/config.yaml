@@ -19,7 +19,7 @@ params:
   show_footer_debug: true
   search: true
   show_prev_next_links: false
-  show_tags: true
+  show_tags: false
 
 outputs:
   home: [HTML, RSS, JSON]

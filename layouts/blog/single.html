@@ -32,11 +32,11 @@
     {{ end }}
   </p>
   
-  {{ if ne .Params.toc false }}
+  {{ if eq .Params.toc true }}
     {{ partial "toc.html" . }}
   {{ end }}
   
-  {{ partial "header-link.html" .Content }}
+  {{ .Content }}
 
   {{ if eq site.Params.show_prev_next_links true }}
     <div id="next-and-prev">

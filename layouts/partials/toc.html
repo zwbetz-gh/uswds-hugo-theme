@@ -1,19 +1,4 @@
-{{ $headings := findRE "<h2.*?>(.|\n])+?</h2>" .Content }}
-{{ if ge (len $headings) 2 }}
 <div class="toc">
-  <strong>Table of contents</strong>
-  <ol>
-    {{ range $headings }}
-    <li>
-      {{ $id := findRE "id=\".*\"" . }}
-      {{ $id = index $id 0 }}
-      {{ $id = strings.TrimPrefix "id=\"" $id }}
-      {{ $id = strings.TrimSuffix "\"" $id }}
-      <a href="#{{ $id }}">
-        {{ . | htmlUnescape | plainify }}
-      </a>
-    </li>
-    {{ end }}
-  </ol>
+  <strong>Table of Contents</strong>
+  {{ .TableOfContents }}
 </div>
-{{ end }}
