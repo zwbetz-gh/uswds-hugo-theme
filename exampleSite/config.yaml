@@ -15,8 +15,10 @@ params:
     Themed by [USWDS](https://designsystem.digital.gov/) &bull;
     Deployed to [Netlify](https://www.netlify.com/) &bull;
     Content in [GitHub](https://github.com/zwbetz-gh/uswds-hugo-theme)
+  show_footer_site_last_updated: true
+  show_footer_debug: true
   search: true
-  show_prev_next_links: true
+  show_prev_next_links: false
   show_tags: true
 
 outputs:

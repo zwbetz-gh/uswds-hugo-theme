@@ -69,19 +69,25 @@
             <div class="grid-col-12 text-center">
               
               {{ with site.Params.footer }}
-                {{ . | markdownify }}
-                <br>
-              {{ end }}
-
-              Site last updated {{ now.Format "2006-01-02" }}
-
-              {{ if false }}
-              <br><br>
-                <div class="text-left">
-                  {{ partial "debug-table.html" . }}
+                <div>
+                  {{ . | markdownify }}
                 </div>
               {{ end }}
 
+              {{ if eq site.Params.show_footer_site_last_updated true }}
+                <div>
+                  Site last updated {{ now.Format "2006-01-02" }}
+                </div>
+              {{ end }}
+
+              {{ if eq site.Params.show_footer_debug true }}
+                <div class="text-left">
+                  <details>
+                    <summary class="text-center">Debug info</summary>
+                    {{ partial "debug-table.html" . }}
+                  </details>
+                </div>
+              {{ end }}
             </div>
           </div>
         </div>
