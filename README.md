@@ -2,42 +2,16 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/675e8c1c-bba0-4a89-8cb6-4e4706bae488/deploy-status)](https://app.netlify.com/sites/uswds-hugo-theme/deploys)
 
-A Hugo theme made with [United States Web Design System](https://v2.designsystem.digital.gov/). 
+Made possible by [United States Web Design System](https://v2.designsystem.digital.gov/).
 
-Made specifically for [my site](https://github.com/zwbetz-gh/zwbetz).
+## Issues and Pull Requests
+
+This theme is made specifically for my site. This theme has its own repo because I keep [my site's content](https://github.com/zwbetz-gh/zwbetz) separate from my site's theme.
+
+Given this, issues and pull requests by others will be ignored.
+
+If you like the theme, and wish to use it, feel free to fork it.
 
 ## Demo
 
-https://uswds-hugo-theme.netlify.com/
-
-## Minimum Hugo version
-
-Hugo extended version `0.62.2` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
-
-## Installation
-
-From the root of your site:
-
-```
-git submodule add https://github.com/zwbetz-gh/uswds-hugo-theme.git themes/uswds-hugo-theme
-```
-
-## Updating
-
-From the root of your site:
-
-```
-git submodule update --remote --merge
-```
-
-## Run example site
-
-From the root of `themes/uswds-hugo-theme/exampleSite`:
-
-```
-hugo server --themesDir ../..
-```
-
-## Configuration
-
-Copy the `config.yaml` from the [`exampleSite`](https://github.com/zwbetz-gh/uswds-hugo-theme/tree/master/exampleSite), then edit as desired. See this file for all valid global params. 
+https://uswds-hugo-theme.netlify.app/
