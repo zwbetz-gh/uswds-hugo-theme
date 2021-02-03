@@ -30,7 +30,6 @@ h6 code {
 
 pre {
   padding: 1rem;
-  border: 1px solid #757575;
 }
 
 pre code {
@@ -40,9 +39,7 @@ pre code {
 }
 
 code {
-  padding: 2px 0.25rem;
-  border-radius: 2px;
-  border: 1px solid #757575;
+  padding: .2em .4em;
 }
 
 /* Blockquote */
