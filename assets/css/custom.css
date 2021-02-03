@@ -1,3 +1,9 @@
+/* Variables */
+:root {
+  --gray: #757575;
+  --gray-light: #dcdee0;
+}
+
 /* Links */
 main a:visited,
 .usa-skipnav:visited {
@@ -44,7 +50,7 @@ code {
 
 /* Blockquote */
 blockquote {
-  border-left: .25rem solid #757575;
+  border-left: .25rem solid var(--gray);
   padding-left: 1rem;
   margin-left: 0;
   max-width: 68ex !important;
@@ -52,20 +58,20 @@ blockquote {
 
 /* Table of contents */
 .toc {
-  border: 1px solid #757575;
+  border: 1px solid var(--gray);
   padding: 1rem; 
   margin-top: 1rem;
-  color: #757575;
+  color: var(--gray);
 }
 
 .toc a,
 .toc a:visited {
-  color: #757575;
+  color: var(--gray);
 }
 
 /* Navbar */
 .usa-nav.is-visible {
-  border-left: 1px solid #dcdee0;
+  border-left: 1px solid var(--gray-light);
 }
 
 /* Tags */
@@ -84,17 +90,17 @@ blockquote {
   margin-top: 4rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border-top: 1px solid #dcdee0;
-  border-bottom: 1px solid #dcdee0;
+  border-top: 1px solid var(--gray-light);
+  border-bottom: 1px solid var(--gray-light);
 }
 
 #footer-main {
   background-color: #fff;
-  border-top: 1px solid #dcdee0;
+  border-top: 1px solid var(--gray-light);
 }
 
 #footer-main * {
-  color: #757575;
+  color: var(--gray);
 }
 
 /* Disqus comments */
