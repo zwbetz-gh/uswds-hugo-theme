@@ -1,4 +1,4 @@
-# USWDS Hugo theme
+# USWDS Hugo Theme
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/675e8c1c-bba0-4a89-8cb6-4e4706bae488/deploy-status)](https://app.netlify.com/sites/uswds-hugo-theme/deploys)
 
