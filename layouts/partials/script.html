@@ -2,7 +2,7 @@
 <script src="{{ $themeJs.RelPermalink }}"></script>
 
 {{ if site.Params.search }}
-  {{ $searchJs := resources.Get "js/search.js" | fingerprint }}
+  {{ $searchJs := resources.Get "js/search.js" | resources.ExecuteAsTemplate "js/search.js" . | fingerprint }}
   <script src="{{ $searchJs.RelPermalink }}"></script>
 {{ end }}
 

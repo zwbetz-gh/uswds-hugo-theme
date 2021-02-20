@@ -21,7 +21,7 @@
 
   function enableSearchEl() {
     getSearchEl().disabled = false;
-    getSearchEl().placeholder = 'Search by title or content';
+    getSearchEl().placeholder = '{{ site.Data.constants.search_label }}';
   }
 
   function fetchJson() {
@@ -72,7 +72,12 @@
     blogListFiltered = blogList.filter((item) => {
       const title = item.Title.toUpperCase();
       const content = item.PlainContent.toUpperCase();
-      return title.includes(searchTerm) || content.includes(searchTerm);
+      const publishDate = item.PublishDateFormatted.toUpperCase();
+      return (
+        title.includes(searchTerm) ||
+        content.includes(searchTerm) ||
+        publishDate.includes(searchTerm)
+      );
     });
   }
 
