@@ -21,7 +21,7 @@
 
   function enableSearchEl() {
     getSearchEl().disabled = false;
-    getSearchEl().placeholder = 'Search by title';
+    getSearchEl().placeholder = 'Search by title or content';
   }
 
   function fetchJson() {
@@ -71,7 +71,8 @@
     const searchTerm = getSearchEl().value.toUpperCase();
     blogListFiltered = blogList.filter((item) => {
       const title = item.Title.toUpperCase();
-      return title.includes(searchTerm);
+      const content = item.PlainContent.toUpperCase();
+      return title.includes(searchTerm) || content.includes(searchTerm);
     });
   }
 
