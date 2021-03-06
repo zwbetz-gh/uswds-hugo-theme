@@ -71,7 +71,7 @@
 	{{- $blog = $blog | append $blogItem -}}
 {{- end -}}
 
-{{- $json := dict
+{{- $object := dict
   "hugo" $hugo
   "site" $site
   "pages" $pages
@@ -79,4 +79,4 @@
 
 {{- $jsonifyOptions := dict "indent" "  " -}}
 
-{{- $json | jsonify $jsonifyOptions -}}
+{{- $object | jsonify $jsonifyOptions -}}
