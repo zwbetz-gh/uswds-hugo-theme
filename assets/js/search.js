@@ -2,45 +2,47 @@
   let blogList = null;
   let blogListFiltered = null;
 
-  function getSearchEl() {
-    return document.querySelector('#search');
-  }
+  const getSearchEl = () => document.querySelector('#search');
 
-  function getListCountEl() {
-    return document.querySelector('#list-count');
-  }
+  const getListCountEl = () => document.querySelector('#list-count');
 
-  function getListEl() {
-    return document.querySelector('#list');
-  }
+  const getListEl = () => document.querySelector('#list');
 
-  function disableSearchEl() {
+  const disableSearchEl = () => {
     getSearchEl().disabled = true;
     getSearchEl().placeholder = 'Loading...';
-  }
+  };
 
-  function enableSearchEl() {
+  const enableSearchEl = () => {
     getSearchEl().disabled = false;
     getSearchEl().placeholder = '{{ site.Data.constants.search_label }}';
-  }
+  };
 
-  function fetchJson() {
+  const fetchJson = () => {
     disableSearchEl();
     const url = `${window.location.origin}/index.json`;
     fetch(url)
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
         blogList = data.blog;
         blogListFiltered = data.blog;
         enableSearchEl();
       });
-  }
+  };
 
-  function render() {
-    const ul = document.createElement('ul');
-    ul.id = 'list';
+  const filter = () => {
+    const searchTerm = getSearchEl().value.toUpperCase();
+    blogListFiltered = blogList.filter((item) => {
+      const title = item.Title.toUpperCase();
+      const content = item.PlainContent.toUpperCase();
+      const publishDate = item.PublishDateFormatted.toUpperCase();
+      return title.includes(searchTerm) || content.includes(searchTerm) || publishDate.includes(searchTerm);
+    });
+  };
+
+  const render = () => {
+    const newList = document.createElement('ul');
+    newList.id = 'list';
 
     blogListFiltered.forEach((item) => {
       const li = document.createElement('li');
@@ -57,41 +59,27 @@
       li.appendChild(document.createTextNode(' '));
       li.appendChild(titleLink);
 
-      ul.appendChild(li);
-
-      const count = `Count: ${blogListFiltered.length}`;
-      getListCountEl().textContent = count;
+      newList.appendChild(li);
     });
 
-    let list = getListEl();
-    list.replaceWith(ul);
-  }
+    const count = `Count: ${blogListFiltered.length}`;
+    getListCountEl().textContent = count;
 
-  function filter() {
-    const searchTerm = getSearchEl().value.toUpperCase();
-    blogListFiltered = blogList.filter((item) => {
-      const title = item.Title.toUpperCase();
-      const content = item.PlainContent.toUpperCase();
-      const publishDate = item.PublishDateFormatted.toUpperCase();
-      return (
-        title.includes(searchTerm) ||
-        content.includes(searchTerm) ||
-        publishDate.includes(searchTerm)
-      );
-    });
-  }
+    const oldList = getListEl();
+    oldList.replaceWith(newList);
+  };
 
-  function handleKeyupEvent() {
+  const handleKeyupEvent = () => {
     filter();
     render();
-  }
+  };
 
-  function main() {
+  const main = () => {
     if (getSearchEl()) {
       fetchJson();
       getSearchEl().addEventListener('keyup', handleKeyupEvent);
     }
-  }
+  };
 
   main();
 })();
