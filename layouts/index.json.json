@@ -77,6 +77,9 @@
   "pages" $pages
   "blog" $blog -}}
 
-{{- $jsonifyOptions := dict "indent" "  " -}}
-
-{{- $object | jsonify $jsonifyOptions -}}
+{{- if (eq site.Params.search_minify true) -}}
+  {{- $object | jsonify -}}
+{{- else -}}
+  {{- $jsonifyOptions := dict "indent" "  " -}}
+  {{- $object | jsonify $jsonifyOptions -}}
+{{- end -}}
