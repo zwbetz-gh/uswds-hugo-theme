@@ -62,13 +62,13 @@
 {{- $blog := slice -}}
 
 {{- range where site.RegularPages.ByPublishDate.Reverse "Section" "==" "blog" -}}
-	{{- $blogItem := dict
+	{{- $item := dict
     "Title" .Title
     "PublishDateFormatted" (.PublishDate.Format "2006-01-02")
     "RelPermalink" .RelPermalink
     "PlainContent" .Plain -}}
 
-	{{- $blog = $blog | append $blogItem -}}
+	{{- $blog = $blog | append $item -}}
 {{- end -}}
 
 {{- $object := dict

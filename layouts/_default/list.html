@@ -1,6 +1,5 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-<p class="text-gray-50" id="list-count">Count: {{ len .Pages }}</p>
 {{ if site.Params.search }}
 <input
   class="usa-input"
@@ -10,6 +9,7 @@
   aria-label="{{ site.Data.constants.search_label }}"
 />
 {{ end }}
+<p class="text-gray-50" id="count">Count: {{ len .Pages }}</p>
 <ul id="list">
   {{ range .Pages.ByPublishDate.Reverse }}
   <li>

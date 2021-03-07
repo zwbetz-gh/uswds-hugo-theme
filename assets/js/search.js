@@ -1,16 +1,19 @@
 (function () {
-  let blogList = null;
-  let blogListFiltered = null;
+  let list = null;
+  let listFiltered = null;
+
+  const getDuration = (startTime, endTime) => (endTime - startTime).toFixed(2);
 
   const getSearchEl = () => document.querySelector('#search');
 
-  const getListCountEl = () => document.querySelector('#list-count');
+  const getCountEl = () => document.querySelector('#count');
 
-  const getListEl = () => document.querySelector('#list');
+  const listId = 'list';
+  const getListEl = () => document.querySelector(`#${listId}`);
 
   const disableSearchEl = () => {
     getSearchEl().disabled = true;
-    getSearchEl().placeholder = 'Loading...';
+    getSearchEl().placeholder = 'Loading ...';
   };
 
   const enableSearchEl = () => {
@@ -19,32 +22,45 @@
   };
 
   const fetchJson = () => {
+    const startTime = performance.now();
     disableSearchEl();
     const url = `${window.location.origin}/index.json`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        blogList = data.blog;
-        blogListFiltered = data.blog;
+        list = data.blog;
+        listFiltered = data.blog;
         enableSearchEl();
+        console.log(
+          `fetchJson took ${getDuration(startTime, performance.now())} ms`
+        );
       });
   };
 
-  const filter = () => {
+  const filterList = () => {
     const searchTerm = getSearchEl().value.toUpperCase();
-    blogListFiltered = blogList.filter((item) => {
+    listFiltered = list.filter((item) => {
       const title = item.Title.toUpperCase();
       const content = item.PlainContent.toUpperCase();
       const publishDate = item.PublishDateFormatted.toUpperCase();
-      return title.includes(searchTerm) || content.includes(searchTerm) || publishDate.includes(searchTerm);
+      return (
+        title.includes(searchTerm) ||
+        content.includes(searchTerm) ||
+        publishDate.includes(searchTerm)
+      );
     });
   };
 
-  const render = () => {
-    const newList = document.createElement('ul');
-    newList.id = 'list';
+  const renderCount = () => {
+    const count = `Count: ${listFiltered.length}`;
+    getCountEl().textContent = count;
+  };
 
-    blogListFiltered.forEach((item) => {
+  const renderList = () => {
+    const newList = document.createElement('ul');
+    newList.id = listId;
+
+    listFiltered.forEach((item) => {
       const li = document.createElement('li');
 
       const publishDate = document.createElement('span');
@@ -62,16 +78,18 @@
       newList.appendChild(li);
     });
 
-    const count = `Count: ${blogListFiltered.length}`;
-    getListCountEl().textContent = count;
-
     const oldList = getListEl();
     oldList.replaceWith(newList);
   };
 
   const handleKeyupEvent = () => {
-    filter();
-    render();
+    const startTime = performance.now();
+    filterList();
+    renderCount();
+    renderList();
+    console.log(
+      `handleKeyupEvent took ${getDuration(startTime, performance.now())} ms`
+    );
   };
 
   const main = () => {

@@ -22,7 +22,10 @@ params:
   show_tags: false
 
 outputs:
-  home: [HTML, RSS, JSON]
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 pygmentsCodefences: true
 pygmentsStyle: pygments
