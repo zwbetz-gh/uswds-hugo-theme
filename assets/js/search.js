@@ -1,15 +1,16 @@
 (function () {
+  const SEARCH_ID = 'search';
+  const COUNT_ID = 'count';
+  const LIST_ID = 'list';
+
   let list = null;
   let listFiltered = null;
 
   const getDuration = (startTime, endTime) => (endTime - startTime).toFixed(2);
 
-  const getSearchEl = () => document.querySelector('#search');
-
-  const getCountEl = () => document.querySelector('#count');
-
-  const listId = 'list';
-  const getListEl = () => document.querySelector(`#${listId}`);
+  const getSearchEl = () => document.getElementById(SEARCH_ID);
+  const getCountEl = () => document.getElementById(COUNT_ID);
+  const getListEl = () => document.getElementById(LIST_ID);
 
   const disableSearchEl = () => {
     getSearchEl().disabled = true;
@@ -58,7 +59,7 @@
 
   const renderList = () => {
     const newList = document.createElement('ul');
-    newList.id = listId;
+    newList.id = LIST_ID;
 
     listFiltered.forEach((item) => {
       const li = document.createElement('li');
