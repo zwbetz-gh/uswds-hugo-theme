@@ -1,14 +1,16 @@
 (function () {
   const SEARCH_ID = 'search';
+  const REGEX_MODE_ID = 'regex_mode';
   const COUNT_ID = 'count';
   const LIST_ID = 'list';
 
   let list = null;
-  let listFiltered = null;
+  let filteredList = null;
 
   const getDuration = (startTime, endTime) => (endTime - startTime).toFixed(2);
 
   const getSearchEl = () => document.getElementById(SEARCH_ID);
+  const getRegexModeEl = () => document.getElementById(REGEX_MODE_ID);
   const getCountEl = () => document.getElementById(COUNT_ID);
   const getListEl = () => document.getElementById(LIST_ID);
 
@@ -19,7 +21,8 @@
 
   const enableSearchEl = () => {
     getSearchEl().disabled = false;
-    getSearchEl().placeholder = '{{ site.Data.constants.search_label }}';
+    getSearchEl().placeholder =
+      'Case-insensitive search by title, content, or publish date';
   };
 
   const fetchJson = () => {
@@ -30,30 +33,42 @@
       .then((response) => response.json())
       .then((data) => {
         list = data.blog;
-        listFiltered = data.blog;
+        filteredList = data.blog;
         enableSearchEl();
         console.log(
           `fetchJson took ${getDuration(startTime, performance.now())} ms`
         );
-      });
+      })
+      .catch((error) =>
+        console.error(`Failed to fetch JSON index: ${error.message}`)
+      );
   };
 
-  const filterList = () => {
-    const searchTerm = getSearchEl().value.toUpperCase();
-    listFiltered = list.filter((item) => {
+  const filterList = (regexMode) => {
+    const regexQuery = new RegExp(getSearchEl().value, 'i');
+    const query = getSearchEl().value.toUpperCase();
+    filteredList = list.filter((item) => {
       const title = item.Title.toUpperCase();
       const content = item.PlainContent.toUpperCase();
       const publishDate = item.PublishDateFormatted.toUpperCase();
-      return (
-        title.includes(searchTerm) ||
-        content.includes(searchTerm) ||
-        publishDate.includes(searchTerm)
-      );
+      if (regexMode) {
+        return (
+          regexQuery.test(title) ||
+          regexQuery.test(content) ||
+          regexQuery.test(publishDate)
+        );
+      } else {
+        return (
+          title.includes(query) ||
+          content.includes(query) ||
+          publishDate.includes(query)
+        );
+      }
     });
   };
 
   const renderCount = () => {
-    const count = `Count: ${listFiltered.length}`;
+    const count = `Count: ${filteredList.length}`;
     getCountEl().textContent = count;
   };
 
@@ -61,7 +76,7 @@
     const newList = document.createElement('ul');
     newList.id = LIST_ID;
 
-    listFiltered.forEach((item) => {
+    filteredList.forEach((item) => {
       const li = document.createElement('li');
 
       const publishDate = document.createElement('span');
@@ -83,20 +98,26 @@
     oldList.replaceWith(newList);
   };
 
-  const handleKeyupEvent = () => {
+  const handleEvent = () => {
     const startTime = performance.now();
-    filterList();
+    const regexMode = getRegexModeEl().checked;
+    filterList(regexMode);
     renderCount();
     renderList();
     console.log(
-      `handleKeyupEvent took ${getDuration(startTime, performance.now())} ms`
+      `handleEvent took ${getDuration(startTime, performance.now())} ms`
     );
+  };
+
+  const addEventListeners = () => {
+    getSearchEl().addEventListener('keyup', handleEvent);
+    getRegexModeEl().addEventListener('change', handleEvent);
   };
 
   const main = () => {
     if (getSearchEl()) {
       fetchJson();
-      getSearchEl().addEventListener('keyup', handleKeyupEvent);
+      addEventListeners();
     }
   };
 

@@ -7,7 +7,13 @@
   type="text"
   placeholder="{{ site.Data.constants.search_label }}"
   aria-label="{{ site.Data.constants.search_label }}"
-/>
+>
+<div class="usa-checkbox">
+  <input id="regex_mode" class="usa-checkbox__input" type="checkbox">
+  <label class="usa-checkbox__label" for="regex_mode">
+    Regex mode
+  </label>
+</div>
 {{ end }}
 <p class="text-gray-50" id="count">Count: {{ len .Pages }}</p>
 <ul id="list">
