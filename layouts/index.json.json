@@ -37,7 +37,6 @@
   {{- $page := dict
     "File" $file
     "Stat" $stat
-    "Plain" .Plain
     "FuzzyWordCount" .FuzzyWordCount
     "WordCount" .WordCount
     "ReadingTime" .ReadingTime
