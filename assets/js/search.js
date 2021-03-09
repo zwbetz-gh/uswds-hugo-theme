@@ -7,7 +7,10 @@
   let list = null;
   let filteredList = null;
 
-  const getDuration = (startTime, endTime) => (endTime - startTime).toFixed(2);
+  const logPerformance = (work, startTime, endTime) => {
+    const duration = (endTime - startTime).toFixed(2);
+    console.log(`${work} took ${duration} ms`);
+  };
 
   const getSearchEl = () => document.getElementById(SEARCH_ID);
   const getRegexModeEl = () => document.getElementById(REGEX_MODE_ID);
@@ -35,9 +38,7 @@
         list = data.blog;
         filteredList = data.blog;
         enableSearchEl();
-        console.log(
-          `fetchJson took ${getDuration(startTime, performance.now())} ms`
-        );
+        logPerformance('fetchJson', startTime, performance.now());
       })
       .catch((error) =>
         console.error(`Failed to fetch JSON index: ${error.message}`)
@@ -104,9 +105,7 @@
     filterList(regexMode);
     renderCount();
     renderList();
-    console.log(
-      `handleEvent took ${getDuration(startTime, performance.now())} ms`
-    );
+    logPerformance('handleEvent', startTime, performance.now());
   };
 
   const addEventListeners = () => {
