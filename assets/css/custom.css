@@ -17,10 +17,10 @@ details summary:focus {
 }
 
 /* Code */
-code, 
+code,
 pre {
-  font-size: .9rem;
-  background-color: rgba(0,0,0,.05);
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.05);
   font-weight: 400;
   overflow-x: auto;
 }
@@ -31,7 +31,7 @@ h3 code,
 h4 code,
 h5 code,
 h6 code {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 pre {
@@ -45,21 +45,27 @@ pre code {
 }
 
 code {
-  padding: .2em .4em;
+  padding: 0.2em 0.4em;
 }
 
 /* Blockquote */
 blockquote {
-  border-left: .25rem solid var(--gray);
+  border-left: 0.25rem solid var(--gray);
   padding-left: 1rem;
   margin-left: 0;
   max-width: 68ex !important;
 }
 
+/* Blog list */
+#search,
+#list li {
+  max-width: initial;
+}
+
 /* Table of contents */
 .toc {
   border: 1px solid var(--gray);
-  padding: 1rem; 
+  padding: 1rem;
   margin-top: 1rem;
   color: var(--gray);
 }
@@ -82,7 +88,7 @@ blockquote {
 
 /* Header links */
 .header-link {
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 /* Footer */
@@ -114,5 +120,5 @@ blockquote {
 }
 
 #disqus-comments {
-  display: none; 
+  display: none;
 }
