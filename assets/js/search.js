@@ -33,22 +33,22 @@
     disableSearchEl();
     const url = `${window.location.origin}/index.json`;
     fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         list = data.blog;
         filteredList = data.blog;
         enableSearchEl();
         logPerformance('fetchJson', startTime, performance.now());
       })
-      .catch((error) =>
+      .catch(error =>
         console.error(`Failed to fetch JSON index: ${error.message}`)
       );
   };
 
-  const filterList = (regexMode) => {
+  const filterList = regexMode => {
     const regexQuery = new RegExp(getSearchEl().value, 'i');
     const query = getSearchEl().value.toUpperCase();
-    filteredList = list.filter((item) => {
+    filteredList = list.filter(item => {
       const title = item.Title.toUpperCase();
       const content = item.PlainContent.toUpperCase();
       const publishDate = item.PublishDateFormatted.toUpperCase();
@@ -77,7 +77,7 @@
     const newList = document.createElement('ul');
     newList.id = LIST_ID;
 
-    filteredList.forEach((item) => {
+    filteredList.forEach(item => {
       const li = document.createElement('li');
 
       const publishDate = document.createElement('span');
