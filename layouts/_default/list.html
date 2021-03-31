@@ -5,8 +5,15 @@
   class="usa-input"
   id="search"
   type="text"
-  placeholder="{{ site.Data.constants.search_label }}"
-  aria-label="{{ site.Data.constants.search_label }}">
+  aria-label="Case-insensitive search by title, content, or publish date"
+  placeholder="Disabled ..."
+  disabled>
+<div class="usa-checkbox">
+  <input id="enable_search" class="usa-checkbox__input" type="checkbox">
+  <label class="usa-checkbox__label" for="enable_search">
+    Enable search
+  </label>
+</div>
 <div class="usa-checkbox">
   <input id="regex_mode" class="usa-checkbox__input" type="checkbox">
   <label class="usa-checkbox__label" for="regex_mode">

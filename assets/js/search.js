@@ -1,5 +1,6 @@
 (function () {
   const SEARCH_ID = 'search';
+  const ENABLE_SEARCH_ID = 'enable_search';
   const REGEX_MODE_ID = 'regex_mode';
   const COUNT_ID = 'count';
   const LIST_ID = 'list';
@@ -13,13 +14,14 @@
   };
 
   const getSearchEl = () => document.getElementById(SEARCH_ID);
+  const getEnableSearchEl = () => document.getElementById(ENABLE_SEARCH_ID);
   const getRegexModeEl = () => document.getElementById(REGEX_MODE_ID);
   const getCountEl = () => document.getElementById(COUNT_ID);
   const getListEl = () => document.getElementById(LIST_ID);
 
-  const disableSearchEl = () => {
+  const disableSearchEl = placeholder => {
     getSearchEl().disabled = true;
-    getSearchEl().placeholder = 'Loading ...';
+    getSearchEl().placeholder = placeholder;
   };
 
   const enableSearchEl = () => {
@@ -28,9 +30,17 @@
       'Case-insensitive search by title, content, or publish date';
   };
 
-  const fetchJson = () => {
+  const disableRegexModeEl = () => {
+    getRegexModeEl().disabled = true;
+  };
+
+  const enableRegexModeEl = () => {
+    getRegexModeEl().disabled = false;
+  };
+
+  const fetchJsonIndex = () => {
     const startTime = performance.now();
-    disableSearchEl();
+    disableSearchEl('Loading ...');
     const url = `${window.location.origin}/index.json`;
     fetch(url)
       .then(response => response.json())
@@ -38,7 +48,7 @@
         list = data.blog;
         filteredList = data.blog;
         enableSearchEl();
-        logPerformance('fetchJson', startTime, performance.now());
+        logPerformance('fetchJsonIndex', startTime, performance.now());
       })
       .catch(error =>
         console.error(`Failed to fetch JSON index: ${error.message}`)
@@ -99,23 +109,31 @@
     oldList.replaceWith(newList);
   };
 
-  const handleEvent = () => {
-    const startTime = performance.now();
+  const handleSearchEvent = () => {
     const regexMode = getRegexModeEl().checked;
     filterList(regexMode);
     renderCount();
     renderList();
-    logPerformance('handleEvent', startTime, performance.now());
+  };
+
+  const handleEnableSearchEvent = () => {
+    if (getEnableSearchEl().checked) {
+      fetchJsonIndex();
+      enableRegexModeEl();
+    } else {
+      disableSearchEl('Disabled ...');
+      disableRegexModeEl();
+    }
   };
 
   const addEventListeners = () => {
-    getSearchEl().addEventListener('keyup', handleEvent);
-    getRegexModeEl().addEventListener('change', handleEvent);
+    getEnableSearchEl().addEventListener('change', handleEnableSearchEvent);
+    getSearchEl().addEventListener('keyup', handleSearchEvent);
+    getRegexModeEl().addEventListener('change', handleSearchEvent);
   };
 
   const main = () => {
     if (getSearchEl()) {
-      fetchJson();
       addEventListeners();
     }
   };
