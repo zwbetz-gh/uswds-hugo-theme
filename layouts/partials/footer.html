@@ -2,7 +2,7 @@
   <div class="usa-footer__secondary-section" id="footer-main">
     <div class="grid-container">
       <div class="grid-row grid-gap">
-        <div class="grid-col-12 text-center">
+        <div class="grid-col-12">
           {{ with site.Params.footer }}
             <div>
               {{ . | markdownify }}
@@ -16,9 +16,9 @@
           {{ end }}
 
           {{ if eq site.Params.show_footer_debug true }}
-            <div class="text-left">
+            <div>
               <details>
-                <summary class="text-center">Debug info</summary>
+                <summary>Debug info</summary>
                 {{ partial "debug-table.html" . }}
               </details>
             </div>
