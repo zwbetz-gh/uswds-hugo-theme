@@ -1,5 +1,6 @@
 (function () {
   const SEARCH_ID = 'search';
+  const ENABLE_SEARCH_DIV_ID = 'enable_search_div';
   const ENABLE_SEARCH_ID = 'enable_search';
   const REGEX_MODE_ID = 'regex_mode';
   const COUNT_ID = 'count';
@@ -14,6 +15,8 @@
   };
 
   const getSearchEl = () => document.getElementById(SEARCH_ID);
+  const getEnableSearchDivEl = () =>
+    document.getElementById(ENABLE_SEARCH_DIV_ID);
   const getEnableSearchEl = () => document.getElementById(ENABLE_SEARCH_ID);
   const getRegexModeEl = () => document.getElementById(REGEX_MODE_ID);
   const getCountEl = () => document.getElementById(COUNT_ID);
@@ -41,7 +44,7 @@
   const fetchJsonIndex = () => {
     const startTime = performance.now();
     disableSearchEl('Loading ...');
-    const url = `${window.location.origin}/index.json`;
+    const url = `${window.location.origin}/blog/index.json`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -132,9 +135,18 @@
     getRegexModeEl().addEventListener('change', handleSearchEvent);
   };
 
+  const askPermission = flag => {
+    if (!flag) {
+      getEnableSearchDivEl().style.display = 'none';
+      getEnableSearchEl().checked = true;
+      handleEnableSearchEvent();
+    }
+  };
+
   const main = () => {
     if (getSearchEl()) {
       addEventListeners();
+      askPermission(false);
     }
   };
 

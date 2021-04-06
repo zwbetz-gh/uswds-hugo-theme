@@ -27,6 +27,10 @@ outputs:
     - HTML
     - RSS
     - JSON
+  section:
+    - HTML
+    - RSS
+    - JSON
 
 pygmentsCodefences: true
 pygmentsStyle: pygments
