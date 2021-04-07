@@ -41,16 +41,39 @@
     getRegexModeEl().disabled = false;
   };
 
+  const getSizeInBytes = obj => {
+    let str = null;
+    if (typeof obj === 'string') {
+      // If obj is a string, then use it
+      str = obj;
+    } else {
+      // Else, make obj into a string
+      str = JSON.stringify(obj);
+    }
+    // Get the length of the Uint8Array
+    const bytes = new TextEncoder().encode(str).length;
+    return bytes;
+  };
+
+  const logSize = (description, obj) => {
+    const bytes = getSizeInBytes(obj);
+    const kb = (bytes / 1000).toFixed(2);
+    // 'approximately' is the keyword here ...
+    console.log(`${description} is approximately ${kb} kb`);
+  };
+
   const fetchJsonIndex = () => {
     const startTime = performance.now();
     disableSearchEl('Loading ...');
-    const url = `${window.location.origin}/blog/index.json`;
+    const path = '/blog/index.json';
+    const url = `${window.location.origin}${path}`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
         list = data.blog;
         filteredList = data.blog;
         enableSearchEl();
+        logSize(path, data.blog);
         logPerformance('fetchJsonIndex', startTime, performance.now());
       })
       .catch(error =>
