@@ -55,7 +55,7 @@
     return bytes;
   };
 
-  const logSize = (description, obj) => {
+  const logSizeInKilobytes = (description, obj) => {
     const bytes = getSizeInBytes(obj);
     const kb = (bytes / 1000).toFixed(2);
     // 'approximately' is the keyword here ...
@@ -73,7 +73,7 @@
         list = data.blog;
         filteredList = data.blog;
         enableSearchEl();
-        logSize(path, data.blog);
+        logSizeInKilobytes(path, data.blog);
         logPerformance('fetchJsonIndex', startTime, performance.now());
       })
       .catch(error =>
