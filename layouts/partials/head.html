@@ -7,9 +7,13 @@
   {{ hugo.Generator }}
   <title>{{ .Title }} | {{ site.Title }}</title>
 
-  {{ $themeCss := resources.Get "css/uswds.min.css" | fingerprint }}
+  {{ $themeCss := resources.Get "css/uswds.css" 
+    | fingerprint 
+    | minify }}
   <link rel="stylesheet" href="{{ $themeCss.RelPermalink }}">
   
-  {{ $customCss := resources.Get "css/custom.css" | fingerprint | minify }}
+  {{ $customCss := resources.Get "css/custom.css" 
+    | fingerprint 
+    | minify }}
   <link rel="stylesheet" href="{{ $customCss.RelPermalink }}">
 </head>

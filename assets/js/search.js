@@ -59,7 +59,7 @@
     const bytes = getSizeInBytes(obj);
     const kb = (bytes / 1000).toFixed(2);
     // 'approximately' is the keyword here ...
-    console.log(`${description} is approximately ${kb} kb`);
+    console.log(`${description} is approximately ${kb} kB`);
   };
 
   const fetchJsonIndex = () => {

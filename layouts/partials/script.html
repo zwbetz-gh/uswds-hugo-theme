@@ -1,8 +1,13 @@
-{{ $themeJs := resources.Get "js/uswds.min.js" | fingerprint }}
+{{ $themeJs := resources.Get "js/uswds.js" 
+| fingerprint 
+| minify }}
 <script src="{{ $themeJs.RelPermalink }}"></script>
 
 {{ if site.Params.search }}
-  {{ $searchJs := resources.Get "js/search.js" | resources.ExecuteAsTemplate "js/search.js" . | fingerprint }}
+  {{ $searchJs := resources.Get "js/search.js" 
+    | resources.ExecuteAsTemplate "js/search.js" . 
+    | fingerprint 
+    | minify }}
   <script src="{{ $searchJs.RelPermalink }}"></script>
 {{ end }}
 
