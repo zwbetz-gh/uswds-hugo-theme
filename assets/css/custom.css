@@ -50,7 +50,7 @@ code {
 
 /* Blockquote */
 blockquote {
-  border-left: 0.25rem solid var(--gray);
+  border-left: 0.25rem solid var(--gray-light);
   padding-left: 1rem;
   margin-left: 0;
   max-width: 68ex !important;
