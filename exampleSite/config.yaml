@@ -21,6 +21,7 @@ params:
   search_minify: false
   show_prev_next_links: false
   show_tags: false
+  use_purged_css: false
 
 outputs:
   home:

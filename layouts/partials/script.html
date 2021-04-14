@@ -3,7 +3,7 @@
 | minify }}
 <script src="{{ $themeJs.RelPermalink }}" async></script>
 
-{{ if site.Params.search }}
+{{ if eq site.Params.search true }}
   {{ $searchJs := resources.Get "js/search.js" 
     | resources.ExecuteAsTemplate "js/search.js" . 
     | fingerprint 
