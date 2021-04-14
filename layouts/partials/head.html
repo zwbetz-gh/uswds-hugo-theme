@@ -4,16 +4,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   <link rel="canonical" href="{{ .Permalink }}">
+
   {{ hugo.Generator }}
+
   <title>{{ .Title }} | {{ site.Title }}</title>
+
+  {{ $themeInitJs := resources.Get "js/uswds-init.js" 
+    | fingerprint 
+    | minify }}
+  <script>{{ $themeInitJs.Content | safeJS }}</script>
 
   {{ $themeCss := resources.Get "css/uswds.css" 
     | fingerprint 
     | minify }}
-  <link rel="stylesheet" href="{{ $themeCss.RelPermalink }}">
+  <style>{{ $themeCss.Content | safeCSS }}</style>
   
   {{ $customCss := resources.Get "css/custom.css" 
     | fingerprint 
     | minify }}
-  <link rel="stylesheet" href="{{ $customCss.RelPermalink }}">
+  <style>{{ $customCss.Content | safeCSS }}</style>
 </head>
