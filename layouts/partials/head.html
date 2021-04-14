@@ -14,10 +14,10 @@
     | minify }}
   <script>{{ $themeInitJs.Content | safeJS }}</script>
 
-  {{ $themeCss := resources.Get "css/uswds.css" 
+  {{ $themePurgedCss := resources.Get "css/uswds-purged.css" 
     | fingerprint 
     | minify }}
-  <style>{{ $themeCss.Content | safeCSS }}</style>
+  <style>{{ $themePurgedCss.Content | safeCSS }}</style>
   
   {{ $customCss := resources.Get "css/custom.css" 
     | fingerprint 
