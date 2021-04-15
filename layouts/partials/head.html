@@ -16,18 +16,18 @@
 
   {{ if eq site.Params.use_purged_css true }}
     {{ $themePurgedCss := resources.Get "css/uswds-purged.css"
-    | fingerprint
-    | minify }}
-    <style>{{ $themePurgedCss.Content | safeCSS }}</style>
+      | fingerprint
+      | minify }}
+    <link rel="stylesheet" href="{{ $themePurgedCss.RelPermalink }}">
   {{ else }}
     {{ $themeCss := resources.Get "css/uswds.css"
-    | fingerprint
-    | minify }}
-    <style>{{ $themeCss.Content | safeCSS }}</style>
+      | fingerprint
+      | minify }}
+    <link rel="stylesheet" href="{{ $themeCss.RelPermalink }}">
   {{ end }}
 
   {{ $customCss := resources.Get "css/custom.css"
     | fingerprint
     | minify }}
-  <style>{{ $customCss.Content | safeCSS }}</style>
+  <link rel="stylesheet" href="{{ $customCss.RelPermalink }}">
 </head>

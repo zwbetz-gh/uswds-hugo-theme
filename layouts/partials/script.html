@@ -1,6 +1,6 @@
 {{ $themeJs := resources.Get "js/uswds.js" 
-| fingerprint 
-| minify }}
+  | fingerprint 
+  | minify }}
 <script src="{{ $themeJs.RelPermalink }}" async></script>
 
 {{ if eq site.Params.search true }}
