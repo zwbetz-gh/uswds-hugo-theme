@@ -22,7 +22,14 @@
           {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
           <li class="usa-nav__primary-item">
             <a class="usa-nav__link {{ if $active }}usa-current{{ end }}" href="{{ .URL }}">
-              <span>{{ .Name }}</span>
+              <span>
+                {{ if eq site.Params.use_nav_icon true }}
+                  <svg class="usa-icon" aria-hidden="true" focusable="false" role="img" style="vertical-align: top;">
+                    <use xlink:href="/img/sprite.svg#{{ .Pre }}"></use>
+                  </svg>
+                {{ end }}
+                {{ .Name }}
+              </span>
             </a>
           </li>
         {{ end }}
