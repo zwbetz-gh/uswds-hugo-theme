@@ -2,6 +2,7 @@
 :root {
   --gray: #757575;
   --gray-light: #dcdee0;
+  --custom-icon-size: 1.4em;
 }
 
 /* Links */
@@ -121,4 +122,11 @@ blockquote {
 
 #disqus-comments {
   display: none;
+}
+
+/* Icons */
+.custom-icon {
+  vertical-align: text-bottom;
+  width: var(--custom-icon-size);
+  height: var(--custom-icon-size);
 }

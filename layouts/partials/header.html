@@ -24,7 +24,7 @@
             <a class="usa-nav__link {{ if $active }}usa-current{{ end }}" href="{{ .URL }}">
               <span>
                 {{ if eq site.Params.use_nav_icon true }}
-                  <svg class="usa-icon" aria-hidden="true" focusable="false" role="img" style="vertical-align: top;">
+                  <svg class="usa-icon custom-icon" aria-hidden="true" focusable="false" role="img">
                     <use xlink:href="/img/sprite.svg#{{ .Pre }}"></use>
                   </svg>
                 {{ end }}

@@ -7,6 +7,15 @@ toc: false
 A few samples from <https://designsystem.digital.gov/components/icon/>
 
 - home {{< icon "home" >}}
+- bookmark {{< icon "bookmark" >}}
+- favorite {{< icon "favorite" >}}
+- help {{< icon "help" >}}
+- info {{< icon "info" >}}
+- lightbulb {{< icon "lightbulb" >}}
+- share {{< icon "share" >}}
+- star {{< icon "star" >}}
+- list {{< icon "list" >}}
+- chat {{< icon "chat" >}}
 - edit {{< icon "edit" >}}
 - build {{< icon "build" >}}
 - rss_feed {{< icon "rss_feed" >}}
