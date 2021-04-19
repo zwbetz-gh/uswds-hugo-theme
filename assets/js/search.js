@@ -136,10 +136,12 @@
   };
 
   const handleSearchEvent = () => {
+    const startTime = performance.now();
     const regexMode = getRegexModeEl().checked;
     filterList(regexMode);
     renderCount();
     renderList();
+    logPerformance('handleSearchEvent', startTime, performance.now());
   };
 
   const handleEnableSearchEvent = () => {
