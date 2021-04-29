@@ -5,11 +5,11 @@ title: USWDS
 theme: uswds-hugo-theme
 enableRobotsTXT: true
 timeout: 45000
-googleAnalytics: UA-123456789-1
 enableGitInfo: true
 
 params:
   google_ads: ca-pub-1234567812345678
+  ga_measurement_id: ga_measurement_id
   footer: >
     Made with [Hugo](https://gohugo.io/) &bull;
     Themed by [USWDS](https://designsystem.digital.gov/) &bull;
