@@ -6,6 +6,8 @@ tags: [nasa, shortcodes, figure, sun, moon, earth]
 
 The below images are from the [NASA Image and Video Library](https://images.nasa.gov/) -- indulge yourself, revel in their beauty. Also, the built-in `figure` shortcode is shown for each image. 
 
+<!--more-->
+
 ---
 
 ```

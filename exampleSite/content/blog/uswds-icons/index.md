@@ -6,6 +6,8 @@ toc: false
 
 A few samples from <https://designsystem.digital.gov/components/icon/>
 
+<!--more-->
+
 - home {{< icon "home" >}}
 - bookmark {{< icon "bookmark" >}}
 - favorite {{< icon "favorite" >}}

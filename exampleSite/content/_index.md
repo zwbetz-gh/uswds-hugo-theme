@@ -4,6 +4,8 @@ title: Home
 
 Here are some quotes:
 
+<!--more-->
+
 {{< blockquote author="Carl Rogers" >}}
 The curious paradox is that when I accept myself just as I am, then I can change.
 {{< /blockquote >}}

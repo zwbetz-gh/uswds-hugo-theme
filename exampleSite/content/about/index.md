@@ -6,6 +6,8 @@ toc: true
 
 Sample About page
 
+<!--more-->
+
 ## Item 1
 
 Item 1

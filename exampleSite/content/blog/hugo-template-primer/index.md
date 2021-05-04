@@ -19,6 +19,8 @@ logic to be able to create a good static website. If you have used other
 template systems from different languages or frameworks you will find a lot of
 similarities in Go templates.
 
+<!--more-->
+
 This document is a brief primer on using Go templates. The [Go docs][gohtmltemplate]
 provide more details.
 
