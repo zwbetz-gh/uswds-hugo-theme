@@ -1,3 +1,7 @@
+**WARNING:** This repo is no longer maintained.
+
+---
+
 # USWDS Hugo Theme
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/675e8c1c-bba0-4a89-8cb6-4e4706bae488/deploy-status)](https://app.netlify.com/sites/uswds-hugo-theme/deploys)
@@ -6,7 +10,7 @@ Made possible by [United States Web Design System](https://v2.designsystem.digit
 
 ## Issues and Pull Requests
 
-This theme is made specifically for my site. This theme has its own repo because I keep [my site's content](https://github.com/zwbetz-gh/zwbetz) separate from my site's theme.
+This theme is made specifically for my site.
 
 Given this, issues and pull requests by others will be ignored.
 
